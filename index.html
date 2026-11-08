@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FBF9F5">
+<title>Sarah Noël · Étudiante en pharmacie</title>
+<meta name="description" content="Sarah Noël, étudiante en 5e année de pharmacie à l’Université Paris Cité. Orientée marketing des industries de santé et affaires médicales.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blanc:#FBF9F5;--ivoire:#F4EFE6;--creme:#EDE5D8;--sable:#DDD0BC;
+  --gris:#756B61;--texte:#221E1B;--violet:#5A2A85;--violet-2:#7B3FF2;
+  --filet:rgba(34,30,27,.12);
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --g:clamp(20px,4.5vw,72px);--max:1320px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--blanc);color:var(--texte);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--violet-2);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--g)}
+.k{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--violet)}
+em{font-style:italic}
+
+/* ——— Navigation ——— */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;transition:background .4s,box-shadow .4s}
+.nav.solid{background:rgba(251,249,245,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--filet)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.logo{font-family:var(--serif);font-size:26px;text-decoration:none;line-height:1}
+.logo i{color:var(--violet)}
+.nav nav{display:flex;gap:clamp(14px,2.4vw,32px);align-items:center}
+.nav nav a{font-size:14px;font-weight:500;text-decoration:none}
+.nav nav a:hover{color:var(--violet)}
+.nav nav a.pill{background:var(--texte);color:var(--blanc);padding:9px 18px;border-radius:999px;transition:background .3s}
+.nav nav a.pill:hover{background:var(--violet);color:var(--blanc)}
+
+/* ——— Accueil ——— */
+.hero{min-height:100svh;display:flex;align-items:stretch;padding-top:68px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,64px);align-items:center;width:100%}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(64px,9.4vw,150px);line-height:.88;letter-spacing:-.025em}
+.hero h1 span{display:block}
+.hero h1 em{color:var(--violet)}
+.hero .meta{margin-top:clamp(28px,4vw,44px);display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;padding:8px 15px;border:1px solid var(--filet);border-radius:999px;background:var(--blanc);line-height:1.2}
+.chip.live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--violet-2);box-shadow:0 0 0 4px rgba(123,63,242,.15)}
+.hero figure{justify-self:end}
+.hero figure img{height:min(74svh,720px);width:auto;max-width:100%;object-fit:contain;border-radius:4px}
+.hero figure figcaption{margin-top:12px;font-size:12.5px;color:var(--gris);letter-spacing:.04em}
+.scroll-cue{position:absolute;left:50%;bottom:22px;translate:-50% 0;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gris);text-decoration:none}
+
+/* ——— Cap ——— */
+.cap{background:var(--texte);color:var(--blanc);padding:clamp(80px,10vw,140px) 0}
+.cap p.big{font-family:var(--serif);font-size:clamp(36px,5.2vw,80px);line-height:1.04;letter-spacing:-.015em;max-width:18ch}
+.cap p.big em{color:#C9A9F0}
+.cap .k{color:#C9A9F0}
+.facts{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(56px,7vw,96px);border-top:1px solid rgba(251,249,245,.2)}
+.facts li{padding:22px 20px 0 0}
+.facts b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(30px,3vw,44px);line-height:1}
+.facts span{display:block;margin-top:10px;font-size:14px;color:rgba(251,249,245,.66);line-height:1.4}
+
+/* ——— Expériences ——— */
+.xp{padding:clamp(88px,11vw,150px) 0}
+.xp-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:clamp(36px,5vw,64px)}
+.xp-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(48px,6.4vw,100px);line-height:.95;letter-spacing:-.02em;margin-top:14px}
+.xp-head h2 em{color:var(--violet)}
+.xp-head > p{font-size:15px;color:var(--gris);max-width:30ch;text-align:right}
+.xp-ui{display:grid;grid-template-columns:230px 1fr;gap:clamp(24px,4vw,64px);align-items:start}
+.tabs{list-style:none;position:sticky;top:96px;border-top:1px solid var(--texte)}
+.tab{width:100%;display:grid;grid-template-columns:34px 1fr;align-items:baseline;gap:4px 8px;text-align:left;background:none;border:0;border-bottom:1px solid var(--filet);padding:16px 0;cursor:pointer;position:relative}
+.tab .n{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--gris);transition:color .3s}
+.tab .t{font-family:var(--serif);font-size:25px;line-height:1.05;transition:color .3s,transform .3s}
+.tab .r{grid-column:2;font-size:12.5px;color:var(--gris)}
+.tab::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--violet);transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.tab:hover .t{color:var(--violet)}
+.tab[aria-selected="true"] .n,.tab[aria-selected="true"] .t{color:var(--violet)}
+.tab[aria-selected="true"] .t{transform:translateX(4px)}
+.tab[aria-selected="true"]::after{width:100%}
+
+.stage{position:relative}
+.slide{display:grid;grid-template-columns:1.45fr 1fr;gap:clamp(24px,3.5vw,56px);align-items:center}
+.slide[hidden]{display:none}
+.media{height:clamp(320px,60vh,560px);display:flex;align-items:center;justify-content:center}
+.media img{max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;border-radius:3px;cursor:zoom-in}
+.media .trio{display:flex;gap:12px;align-items:center;justify-content:center;height:100%;width:100%}
+.media .trio > *{flex:1 1 0;min-width:0;height:100%;display:flex;align-items:center;justify-content:center}
+.body .role{font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--gris);text-transform:uppercase}
+.body h3{font-family:var(--serif);font-weight:400;font-size:clamp(44px,4.6vw,72px);line-height:.95;letter-spacing:-.015em;margin:12px 0 18px}
+.body .lead{font-size:clamp(18px,1.5vw,21px);line-height:1.45;font-weight:500;max-width:30ch}
+.body .lead em{font-family:var(--serif);font-weight:400;font-size:1.18em;color:var(--violet)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;list-style:none}
+.tags li{font-size:13.5px;font-weight:500;padding:7px 13px;border-radius:999px;background:var(--ivoire)}
+.tags li.hl{background:var(--violet);color:var(--blanc)}
+.more{margin-top:28px;display:inline-flex;align-items:center;gap:12px;background:var(--texte);color:var(--blanc);border:0;border-radius:999px;padding:13px 22px;font-size:15px;font-weight:600;cursor:pointer;transition:background .3s,gap .3s}
+.more:hover{background:var(--violet);gap:16px}
+.more svg{width:16px;height:16px}
+.ctrl{display:flex;align-items:center;gap:16px;margin-top:28px}
+.ctrl .count{font-family:var(--serif);font-style:italic;font-size:18px;min-width:56px}
+.ctrl .count b{font-weight:400;color:var(--violet)}
+.ctrl .bar{flex:1;height:2px;background:var(--filet);position:relative;border-radius:2px;overflow:hidden}
+.ctrl .bar i{position:absolute;inset:0 auto 0 0;background:var(--violet);transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.arrow{width:48px;height:48px;border-radius:50%;border:1px solid var(--filet);background:var(--blanc);display:grid;place-items:center;cursor:pointer;transition:border-color .3s,color .3s,background .3s}
+.arrow:hover{border-color:var(--violet);color:var(--violet)}
+.arrow svg{width:18px;height:18px}
+@media (prefers-reduced-motion:no-preference){
+  .slide.enter .media{animation:inL .6s cubic-bezier(.2,.7,.2,1) both}
+  .slide.enter .body > *{animation:inU .6s cubic-bezier(.2,.7,.2,1) both}
+  .slide.enter .body > *:nth-child(2){animation-delay:.05s}
+  .slide.enter .body > *:nth-child(3){animation-delay:.1s}
+  .slide.enter .body > *:nth-child(4){animation-delay:.15s}
+  .slide.enter .body > *:nth-child(5){animation-delay:.2s}
+  @keyframes inL{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:none}}
+  @keyframes inU{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+}
+
+
+/* ——— Navigation entre projets, bien visible ——— */
+.xp-head > p.hint{text-align:right;color:var(--texte);font-size:18px;max-width:none}
+.hint b{font-weight:700;color:var(--violet)}
+.hint small{display:block;font-size:13.5px;color:var(--gris);margin-top:4px}
+.hint-ar{display:inline-block;color:var(--violet);font-weight:700}
+@media (prefers-reduced-motion:no-preference){.hint-ar{animation:nudgeL 1.6s ease-in-out infinite}.hint-ar.r{animation-name:nudgeR}}
+@keyframes nudgeR{0%,100%{transform:none}50%{transform:translateX(6px)}}
+@keyframes nudgeL{0%,100%{transform:none}50%{transform:translateX(-6px)}}
+
+/* grandes flèches en V, tout au bord de l’écran */
+.xp{position:relative;overflow-x:clip}
+.edge{position:absolute;top:var(--mid,280px);translate:0 -50%;z-index:5;width:64px;height:150px;border:0;background:none;color:var(--violet);cursor:pointer;display:grid;place-items:center;transition:color .25s,transform .3s}
+.edge svg{width:46px;height:130px;overflow:visible;filter:drop-shadow(0 1px 1px rgba(251,249,245,.7))}
+.edge.l{left:clamp(4px,1.2vw,24px)}
+.edge.r{right:clamp(4px,1.2vw,24px)}
+.edge:hover{color:var(--texte)}
+.edge.l:hover{transform:translateX(-5px)}
+.edge.r:hover{transform:translateX(5px)}
+@media (prefers-reduced-motion:no-preference){.xp.fresh .edge.r{animation:nudgeR 1.4s ease-in-out infinite}.xp.fresh .edge.l{animation:nudgeL 1.4s ease-in-out infinite}}
+@media (max-width:760px){
+  .edge{width:28px;height:90px}
+  .edge svg{width:24px;height:76px;filter:drop-shadow(0 0 3px rgba(255,255,255,.95)) drop-shadow(0 0 1px rgba(255,255,255,.9))}
+  .edge.l{left:2px}.edge.r{right:2px}
+}
+.ctrl{gap:18px;margin-top:36px;padding-top:24px;border-top:1px solid var(--filet)}
+.dots{display:flex;gap:6px;flex:1}
+.dots i{flex:1;height:4px;border-radius:4px;background:var(--creme);transition:background .4s}
+.dots i.on{background:var(--violet)}
+.dots i.done{background:var(--sable)}
+.nextbig{display:inline-flex;align-items:center;gap:14px;border:0;border-radius:999px;background:var(--violet);color:var(--blanc);padding:12px 14px 12px 26px;cursor:pointer;text-align:left;transition:background .3s,gap .3s}
+.nextbig:hover{background:var(--texte);gap:18px}
+.nextbig .lab{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;opacity:.75;display:block}
+.nextbig .nm{font-family:var(--serif);font-size:26px;line-height:1}
+.nextbig > span{display:flex;flex-direction:column}
+.nextbig .lab + .nm{margin-top:2px}
+.nextbig svg{width:22px;height:22px;background:rgba(255,255,255,.16);border-radius:50%;padding:12px;box-sizing:content-box}
+@media (max-width:760px){
+  .xp-head > p.hint{text-align:left;font-size:17px}
+  .ctrl{flex-wrap:wrap}
+  .ctrl .count{order:1}
+  .dots{order:2;flex-basis:100%;order:0}
+  .ctrl #prev{order:1}
+  .nextbig{order:2;flex:1;justify-content:space-between}
+  .nextbig .nm{font-size:22px}
+}
+
+/* ——— Fenêtre « Voir plus » ——— */
+dialog.sheet{border:0;padding:0;margin:0 0 0 auto;height:100%;max-height:100%;width:min(760px,100%);max-width:100%;background:var(--blanc);color:var(--texte);overflow-y:auto;overscroll-behavior:contain}
+dialog.sheet::backdrop{background:rgba(34,30,27,.5);backdrop-filter:blur(3px)}
+dialog.sheet[open]{animation:sheetIn .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes sheetIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+.sheet-in{padding:clamp(28px,5vw,64px)}
+.sheet-top{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:16px clamp(28px,5vw,64px);background:rgba(251,249,245,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--filet);z-index:2}
+.close{width:44px;height:44px;border-radius:50%;border:1px solid var(--filet);background:none;display:grid;place-items:center;cursor:pointer}
+.close:hover{border-color:var(--violet);color:var(--violet)}
+.close svg{width:18px;height:18px}
+.sheet h3{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6vw,72px);line-height:.95;letter-spacing:-.015em}
+.sheet .sub{margin-top:12px;font-size:15px;color:var(--gris)}
+.sheet .blocks{display:grid;gap:30px;margin-top:40px}
+.sheet h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--violet);font-weight:600;margin-bottom:10px}
+.sheet p{font-size:16.5px;line-height:1.6;max-width:56ch}
+.sheet ul{list-style:none}
+.sheet li{padding:10px 0 10px 24px;border-top:1px solid var(--filet);position:relative;font-size:16px;line-height:1.45}
+.sheet li:last-child{border-bottom:1px solid var(--filet)}
+.sheet li::before{content:"";position:absolute;left:0;top:20px;width:11px;height:2px;background:var(--violet)}
+.sheet .award{background:var(--violet);color:var(--blanc);border-radius:6px;padding:22px 24px}
+.sheet .award h4{color:#D9C6F5}
+.sheet .award p{font-family:var(--serif);font-size:26px;line-height:1.15}
+.sheet .photos{margin-top:44px;columns:2;column-gap:12px}
+.sheet .photos button{all:unset;display:block;break-inside:avoid;margin-bottom:12px;cursor:zoom-in;border-radius:4px;overflow:hidden}
+.sheet .photos button:focus-visible{outline:2px solid var(--violet-2);outline-offset:2px}
+.sheet .photos img{width:100%;height:auto;transition:opacity .3s}
+.sheet .photos button:hover img{opacity:.88}
+
+/* ——— Visionneuse ——— */
+dialog.lb{border:0;padding:0;margin:0;width:100%;height:100%;max-width:100%;max-height:100%;background:rgba(20,17,15,.95);display:none;align-items:center;justify-content:center}
+dialog.lb[open]{display:flex}
+dialog.lb::backdrop{background:transparent}
+dialog.lb img{max-width:min(92vw,1300px);max-height:84vh;width:auto;height:auto;object-fit:contain}
+dialog.lb .close{position:absolute;top:16px;right:16px;color:#fff;border-color:rgba(255,255,255,.3)}
+dialog.lb .lb-nav{position:absolute;top:50%;translate:0 -50%;color:#fff;border-color:rgba(255,255,255,.3);background:transparent}
+dialog.lb .p{left:16px}dialog.lb .n{right:16px}
+dialog.lb .cnt{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:rgba(255,255,255,.7);font-family:var(--serif);font-style:italic;font-size:17px}
+
+/* ——— Parcours ——— */
+.parcours{background:var(--ivoire);padding:clamp(88px,10vw,140px) 0}
+.parcours h2{font-family:var(--serif);font-weight:400;font-size:clamp(44px,5.6vw,84px);line-height:.95;letter-spacing:-.02em;margin:14px 0 clamp(40px,5vw,64px)}
+.parcours h2 em{color:var(--violet)}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,48px)}
+.col h3{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--violet);font-weight:600;padding-bottom:12px;border-bottom:1px solid var(--texte)}
+.col ul{list-style:none}
+.col li{padding:14px 0;border-bottom:1px solid var(--filet)}
+.col li b{display:block;font-weight:600;font-size:15.5px;line-height:1.35}
+.col li span{display:block;font-size:14px;color:var(--gris);margin-top:2px;line-height:1.4}
+.col li .y{font-size:12.5px;margin:0 0 2px;font-variant-numeric:tabular-nums}
+.col .row2{display:flex;justify-content:space-between;gap:12px}
+.col .row2 span{margin:0}
+
+/* ——— Contact ——— */
+.contact{padding:clamp(88px,10vw,150px) 0 48px}
+.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(52px,8vw,128px);line-height:.92;letter-spacing:-.025em}
+.contact h2 em{color:var(--violet)}
+.contact .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(36px,4vw,56px)}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:16px;padding:15px 24px;border-radius:999px;border:1px solid var(--texte);transition:background .3s,color .3s,border-color .3s}
+.btn.dark{background:var(--texte);color:var(--blanc)}
+.btn:hover{background:var(--violet);border-color:var(--violet);color:var(--blanc)}
+.contact .mail{margin-top:22px;font-size:15px;color:var(--gris)}
+footer{margin-top:clamp(64px,8vw,110px);border-top:1px solid var(--filet);padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--gris)}
+
+/* apparition */
+@media (prefers-reduced-motion:no-preference){
+  .js .rv{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .js .rv.in{opacity:1;transform:none}
+  .hero h1 span{animation:inU .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero h1 span:nth-child(2){animation-delay:.1s}.hero h1 span:nth-child(3){animation-delay:.18s}
+  .hero .meta{animation:inU .9s cubic-bezier(.2,.7,.2,1) .25s both}
+  .hero figure{animation:fade 1.2s ease .1s both}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+}
+
+/* ——— Tablette ——— */
+@media (max-width:1060px){
+  .xp-ui{grid-template-columns:1fr}
+  .tabs{position:static;display:flex;overflow-x:auto;gap:8px;border:0;scrollbar-width:none;margin:0 calc(-1 * var(--g));padding:0 var(--g) 4px}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs li{flex:none}
+  .tab{display:flex;gap:8px;align-items:baseline;border:1px solid var(--filet);border-radius:999px;padding:10px 16px}
+  .tab .t{font-size:19px}
+  .tab .r{display:none}
+  .tab::after{display:none}
+  .tab[aria-selected="true"]{background:var(--texte);border-color:var(--texte)}
+  .tab[aria-selected="true"] .t,.tab[aria-selected="true"] .n{color:var(--blanc)}
+  .tab[aria-selected="true"] .t{transform:none}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .facts li{padding-bottom:22px}
+}
+/* ——— Mobile ——— */
+@media (max-width:760px){
+  :root{--g:20px}
+  body{font-size:16px}
+  .nav nav a:not(.pill){display:none}
+  .hero{min-height:auto;padding-top:92px;padding-bottom:56px}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(56px,17vw,80px)}
+  .hero figure{justify-self:stretch;margin-top:8px}
+  .hero figure img{width:100%;height:auto}
+  .scroll-cue{display:none}
+  .cap p.big{font-size:clamp(32px,9vw,42px)}
+  .facts li{padding-right:12px}
+  .xp-head{flex-direction:column;align-items:start}
+  .xp-head > p{text-align:left}
+  .slide{grid-template-columns:1fr;gap:24px}
+  .media{height:auto;min-height:0}
+  .media img{max-height:62vh}
+  .media .trio{height:auto}
+  .media .trio > *{height:auto}
+  .body h3{font-size:clamp(42px,12vw,54px)}
+  .ctrl{margin-top:22px}
+  .sheet .photos{columns:1}
+  .cols{grid-template-columns:1fr;gap:40px}
+  .contact h2{font-size:clamp(48px,14vw,64px)}
+  .btn{flex:1 1 auto;justify-content:center}
+  dialog.lb .lb-nav{top:auto;bottom:16px;translate:none}
+  dialog.lb .p{left:calc(50% - 60px)}dialog.lb .n{right:calc(50% - 60px)}
+  dialog.lb .cnt{bottom:auto;top:28px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}html{scroll-behavior:auto}}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-l" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-r" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-vl" viewBox="0 0 46 130"><path d="M42 3L4 65l38 62" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-vr" viewBox="0 0 46 130"><path d="M4 3l38 62L4 127" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">Sarah <i>Noël</i></a>
+    <nav aria-label="Navigation principale">
+      <a href="#experiences">Expériences</a>
+      <a href="#parcours">Parcours</a>
+      <a class="pill" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- ═══ ACCUEIL ═══ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1><span>Sarah,</span><span><em>étudiante</em> en</span><span>pharmacie.</span></h1>
+      <div class="meta">
+        <span class="chip">5e année · Université Paris Cité</span>
+        <span class="chip">Filière industrie</span>
+        <span class="chip live">Stage dès avril 2027</span>
+      </div>
+    </div>
+    <figure>
+      <img src="img/sarah-scene-baudelaire.jpg" width="1067" height="1600" alt="Sarah lisant un texte au micro, sur scène, pour le Programme Baudelaire" fetchpriority="high">
+      <figcaption>Sur scène · Programme Baudelaire</figcaption>
+    </figure>
+  </div>
+  <a class="scroll-cue" href="#cap">Défiler ↓</a>
+</section>
+
+<!-- ═══ LE CAP ═══ -->
+<section class="cap" id="cap">
+  <div class="wrap">
+    <p class="k rv">Mon objectif</p>
+    <p class="big rv" style="margin-top:18px">Orienter mon parcours vers <em>le marketing des industries de santé</em> et les affaires médicales.</p>
+    <ul class="facts rv">
+      <li><b>5</b><span>projets menés en parallèle de mes études</span></li>
+      <li><b>≈ 10 000 €</b><span>de subventions obtenues pour mon média</span></li>
+      <li><b>2025</b><span>Prix de l’engagement étudiant, Université Paris Cité</span></li>
+      <li><b>Actes Sud</b><span>participation à un ouvrage collectif publié</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ EXPÉRIENCES ═══ -->
+<section class="xp" id="experiences">
+  <button class="edge l" type="button" id="edgeL" aria-label="Projet précédent"><svg><use href="#i-vl"/></svg></button>
+  <button class="edge r" type="button" id="edgeR" aria-label="Projet suivant"><svg><use href="#i-vr"/></svg></button>
+  <div class="wrap">
+    <div class="xp-head rv">
+      <div><p class="k">Expériences</p><h2>De l’idée <em>au projet.</em></h2></div>
+      <p class="hint"><span class="hint-ar" aria-hidden="true">←</span> <b>5 projets</b> à faire défiler <span class="hint-ar r" aria-hidden="true">→</span><small>Flèches, onglets ou glisser · «&nbsp;Voir plus&nbsp;» pour le détail</small></p>
+    </div>
+
+    <div class="xp-ui rv">
+      <ol class="tabs" role="tablist" aria-label="Expériences">
+        <li><button class="tab" role="tab" id="t-0" aria-controls="s-0" aria-selected="true"><span class="n">01</span><span class="t">Onzditoo</span><span class="r">Média santé mentale</span></button></li>
+        <li><button class="tab" role="tab" id="t-1" aria-controls="s-1" aria-selected="false" tabindex="-1"><span class="n">02</span><span class="t">Stetoo</span><span class="r">Contenus santé</span></button></li>
+        <li><button class="tab" role="tab" id="t-2" aria-controls="s-2" aria-selected="false" tabindex="-1"><span class="n">03</span><span class="t">Circle U.</span><span class="r">Événementiel européen</span></button></li>
+        <li><button class="tab" role="tab" id="t-3" aria-controls="s-3" aria-selected="false" tabindex="-1"><span class="n">04</span><span class="t">Baudelaire</span><span class="r">Écriture &amp; scène</span></button></li>
+        <li><button class="tab" role="tab" id="t-4" aria-controls="s-4" aria-selected="false" tabindex="-1"><span class="n">05</span><span class="t">Lucernaire</span><span class="r">Théâtre</span></button></li>
+      </ol>
+
+      <div class="stage" id="stage">
+        <!-- 01 -->
+        <article class="slide" role="tabpanel" id="s-0" aria-labelledby="t-0">
+          <div class="media"><img src="img/onz-studio.jpg" width="1600" height="1200" alt="Le studio d’Onzditoo pendant l’enregistrement d’un podcast" data-open="0"></div>
+          <div class="body">
+            <p class="role">Co-fondatrice · Rédactrice en chef</p>
+            <h3>Onzditoo</h3>
+            <p class="lead">J’ai cofondé un média pour <em>libérer la parole</em> des jeunes sur la santé mentale.</p>
+            <ul class="tags"><li class="hl">Prix de l’engagement étudiant 2025</li><li>≈ 10 000 € de subventions</li><li>Podcasts &amp; reportages</li></ul>
+            <button class="more" type="button" data-more="d-0">Voir plus <svg><use href="#i-plus"/></svg></button>
+          </div>
+        </article>
+        <!-- 02 -->
+        <article class="slide" role="tabpanel" id="s-1" aria-labelledby="t-1" hidden>
+          <div class="media"><div class="trio">
+            <div><img src="img/stetoo-alimentation.jpg" width="1145" height="1600" alt="Carrousel : Alimentation ultra-transformée et cancer" data-open="1" loading="lazy"></div>
+            <div><img src="img/stetoo-medecine.jpg" width="1138" height="1600" alt="Carrousel : La médecine a longtemps oublié la moitié de l’humanité" data-open="1" loading="lazy"></div>
+            <div><img src="img/stetoo-burnout.jpg" width="1154" height="1600" alt="Carrousel : Burn-out chez les étudiants" data-open="1" loading="lazy"></div>
+          </div></div>
+          <div class="body">
+            <p class="role">Freelance contenu santé · Avril 2026</p>
+            <h3>Stetoo</h3>
+            <p class="lead">Des contenus santé <em>clairs et engageants</em> pour Sympathique Média.</p>
+            <ul class="tags"><li class="hl">Carrousel</li><li class="hl">Contenu audio</li><li>Vulgarisation</li></ul>
+            <button class="more" type="button" data-more="d-1">Voir plus <svg><use href="#i-plus"/></svg></button>
+          </div>
+        </article>
+        <!-- 03 -->
+        <article class="slide" role="tabpanel" id="s-2" aria-labelledby="t-2" hidden>
+          <div class="media"><img src="img/circle-09.jpg" width="1200" height="1600" alt="Dégustation autour d’une table dans le jardin botanique" data-open="2" loading="lazy"></div>
+          <div class="body">
+            <p class="role">Ambassadrice événementielle</p>
+            <h3>Circle U.</h3>
+            <p class="lead">J’ai imaginé et organisé un événement <em>climat, biodiversité &amp; santé.</em></p>
+            <ul class="tags"><li class="hl">Conception → jour J</li><li>Jardin botanique</li><li>Dégustation de plantes</li><li>9 universités européennes</li></ul>
+            <button class="more" type="button" data-more="d-2">Voir plus <svg><use href="#i-plus"/></svg></button>
+          </div>
+        </article>
+        <!-- 04 -->
+        <article class="slide" role="tabpanel" id="s-3" aria-labelledby="t-3" hidden>
+          <div class="media"><img src="img/baudelaire-couverture.jpg" width="400" height="565" alt="Couverture du livre L’Androgyne, Les Baudelaire, Actes Sud" data-open="3" loading="lazy"></div>
+          <div class="body">
+            <p class="role">Création artistique &amp; littéraire</p>
+            <h3>Programme Baudelaire</h3>
+            <p class="lead">Écrire, peindre et lire sur scène autour d’un thème&nbsp;: <em>l’Androgyne.</em></p>
+            <ul class="tags"><li class="hl">Ouvrage collectif · Actes Sud</li><li>Écriture</li><li>Peinture</li><li>Scène</li></ul>
+            <button class="more" type="button" data-more="d-3">Voir plus <svg><use href="#i-plus"/></svg></button>
+          </div>
+        </article>
+        <!-- 05 -->
+        <article class="slide" role="tabpanel" id="s-4" aria-labelledby="t-4" hidden>
+          <div class="media"><img src="img/lucernaire.jpg" width="1600" height="1200" alt="Représentation théâtrale sur la scène du Lucernaire" data-open="4" loading="lazy"></div>
+          <div class="body">
+            <p class="role">Théâtre · 5 ans</p>
+            <h3>Lucernaire</h3>
+            <p class="lead">Cinq ans de théâtre pour gagner en <em>aisance à l’oral.</em></p>
+            <ul class="tags"><li class="hl">Prise de parole</li><li>Présence</li><li>Communication non verbale</li></ul>
+            <button class="more" type="button" data-more="d-4">Voir plus <svg><use href="#i-plus"/></svg></button>
+          </div>
+        </article>
+
+        <div class="ctrl">
+          <button class="arrow" type="button" id="prev" aria-label="Projet précédent"><svg><use href="#i-l"/></svg></button>
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <span class="count" aria-live="polite"><b>01</b> / 05</span>
+          <button class="nextbig" type="button" id="next"><span class="lab">Projet suivant</span><span class="nm">Stetoo</span><svg><use href="#i-r"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VOIR PLUS : détails ═══ -->
+<dialog class="sheet" id="d-0" aria-labelledby="h-0">
+  <div class="sheet-top"><span class="k">01 · Onzditoo</span><button class="close" type="button" aria-label="Fermer"><svg><use href="#i-x"/></svg></button></div>
+  <div class="sheet-in">
+    <h3 id="h-0">Onzditoo</h3>
+    <p class="sub">Co-fondatrice &amp; rédactrice en chef · Média santé mentale</p>
+    <div class="blocks">
+      <div><h4>Le projet</h4><p>Rendre la santé mentale plus accessible aux jeunes, dans le contexte post-Covid. Podcasts, réseaux sociaux et reportages.</p></div>
+      <div><h4>Mon rôle</h4><ul><li>Concept et positionnement du média</li><li>Recherche de financements</li><li>Partenaires et intervenants</li><li>Tournage, montage, diffusion</li></ul></div>
+      <div><h4>Résultats</h4><ul><li>Près de 10 000 € de subventions CVEC : matériel et studio</li><li>Podcasts avec des psychologues et des associations</li><li>Un reportage dans une structure pour personnes en situation de handicap</li></ul></div>
+      <div class="award"><h4>Distinction</h4><p>Prix individuel de l’engagement étudiant 2025 · Université Paris Cité</p></div>
+    </div>
+    <div class="photos">
+      <button type="button"><img src="img/onz-studio.jpg" width="1600" height="1200" alt="Le studio d’Onzditoo pendant l’enregistrement d’un podcast" loading="lazy"></button>
+      <button type="button"><img src="img/onz-prix.jpg" width="1200" height="1600" alt="Cérémonie de remise des prix de l’engagement étudiant" loading="lazy"></button>
+      <button type="button"><img src="img/onz-podcast.jpg" width="1600" height="900" alt="Enregistrement d’un podcast à quatre voix" loading="lazy"></button>
+      <button type="button"><img src="img/onz-trophee.jpg" width="900" height="1600" alt="Le trophée du Prix de l’engagement étudiant" loading="lazy"></button>
+      <button type="button"><img src="img/onz-micro.jpg" width="1600" height="900" alt="Deux intervenants au micro" loading="lazy"></button>
+      <button type="button"><img src="img/onz-camera.jpg" width="1200" height="1600" alt="Écran de contrôle d’une caméra pendant un tournage" loading="lazy"></button>
+      <button type="button"><img src="img/onz-interview.jpg" width="982" height="1600" alt="Installation de tournage pour une interview" loading="lazy"></button>
+      <button type="button"><img src="img/onz-youtube.jpg" width="1125" height="1070" alt="Épisode « On apprend à vaincre notre anxiété » sur YouTube" loading="lazy"></button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="d-1" aria-labelledby="h-1">
+  <div class="sheet-top"><span class="k">02 · Stetoo</span><button class="close" type="button" aria-label="Fermer"><svg><use href="#i-x"/></svg></button></div>
+  <div class="sheet-in">
+    <h3 id="h-1">Stetoo</h3>
+    <p class="sub">Freelance contenu santé · Sympathique Média · Avril 2026, un mois</p>
+    <div class="blocks">
+      <div><h4>Le projet</h4><p>Stetoo est une agence de communication et d’innovation en santé. J’ai contribué à sa branche média.</p></div>
+      <div><h4>Mon rôle</h4><ul><li>Veille et sélection de l’information</li><li>Vulgarisation scientifique</li><li>Carrousels et contenus audio</li><li>Adaptation du message au public</li></ul></div>
+      <div><h4>À retenir</h4><ul><li>Être fiable, clair et engageant à la fois</li><li>Rencontre avec Ghada Hatem-Gantzer, fondatrice de la Maison des femmes de Saint-Denis, interviewée par le média</li></ul></div>
+    </div>
+    <div class="photos">
+      <button type="button"><img src="img/stetoo-alimentation.jpg" width="1145" height="1600" alt="Carrousel : Alimentation ultra-transformée et cancer" loading="lazy"></button>
+      <button type="button"><img src="img/stetoo-medecine.jpg" width="1138" height="1600" alt="Carrousel : La médecine a longtemps oublié la moitié de l’humanité" loading="lazy"></button>
+      <button type="button"><img src="img/stetoo-burnout.jpg" width="1154" height="1600" alt="Carrousel : Burn-out chez les étudiants" loading="lazy"></button>
+      <button type="button"><img src="img/stetoo-maison-des-femmes.jpg" width="896" height="1600" alt="Contenu du média avec Ghada Hatem-Gantzer" loading="lazy"></button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="d-2" aria-labelledby="h-2">
+  <div class="sheet-top"><span class="k">03 · Circle U.</span><button class="close" type="button" aria-label="Fermer"><svg><use href="#i-x"/></svg></button></div>
+  <div class="sheet-in">
+    <h3 id="h-2">Circle U.</h3>
+    <p class="sub">Ambassadrice événementielle · Alliance de 9 universités européennes</p>
+    <div class="blocks">
+      <div><h4>L’idée</h4><p>Faire découvrir les plantes par les sens. D’abord une visite du jardin botanique avec des chercheurs, puis une dégustation à base de plantes du jardin.</p></div>
+      <div><h4>Mon rôle</h4><ul><li>Conception de l’événement</li><li>Intervenants, prestataires et traiteur</li><li>Gestion du budget</li><li>Lieu et logistique</li><li>Coordination le jour J</li></ul></div>
+      <div><h4>Aussi</h4><p>Échanges avec les universités partenaires et événements interculturels, dont la Journée des langues.</p></div>
+    </div>
+    <div class="photos">
+      <button type="button"><img src="img/circle-09.jpg" width="1200" height="1600" alt="Dégustation dans le jardin botanique" loading="lazy"></button>
+      <button type="button"><img src="img/circle-01.jpg" width="1200" height="1600" alt="Visite guidée du jardin botanique" loading="lazy"></button>
+      <button type="button"><img src="img/circle-03.jpg" width="1600" height="1200" alt="Table de dégustation avec plantes, jus et huiles infusées" loading="lazy"></button>
+      <button type="button"><img src="img/circle-02.jpg" width="1200" height="1600" alt="Service des jus et infusions" loading="lazy"></button>
+      <button type="button"><img src="img/circle-08.jpg" width="1200" height="1600" alt="Tartelettes aux herbes" loading="lazy"></button>
+      <button type="button"><img src="img/circle-10.jpg" width="1200" height="1600" alt="Radis du jardin" loading="lazy"></button>
+      <button type="button"><img src="img/circle-04.jpg" width="1200" height="1600" alt="Fraises et préparations végétales" loading="lazy"></button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="d-3" aria-labelledby="h-3">
+  <div class="sheet-top"><span class="k">04 · Programme Baudelaire</span><button class="close" type="button" aria-label="Fermer"><svg><use href="#i-x"/></svg></button></div>
+  <div class="sheet-in">
+    <h3 id="h-3">Programme Baudelaire</h3>
+    <p class="sub">Création artistique &amp; littéraire · Faculté de pharmacie de Paris</p>
+    <div class="blocks">
+      <div><h4>Le projet</h4><p>Un programme artistique dirigé par l’écrivaine Cécile Ladjali. Thème de notre promotion&nbsp;: l’Androgyne.</p></div>
+      <div><h4>Ce que j’ai fait</h4><ul><li>Ateliers d’écriture</li><li>Peinture</li><li>Lecture à voix haute sur scène</li></ul></div>
+      <div class="award"><h4>Publication</h4><p><em>Les Baudelaire, Promotion IV&nbsp;: L’Androgyne</em> · Actes Sud</p></div>
+    </div>
+    <div class="photos">
+      <button type="button"><img src="img/sarah-scene-baudelaire.jpg" width="1067" height="1600" alt="Lecture sur scène" loading="lazy"></button>
+      <button type="button"><img src="img/baudelaire-couverture.jpg" width="400" height="565" alt="Couverture de l’ouvrage, Actes Sud" loading="lazy"></button>
+      <button type="button"><img src="img/baudelaire-peinture.jpg" width="1200" height="1600" alt="Peinture réalisée pendant le programme" loading="lazy"></button>
+      <button type="button"><img src="img/baudelaire-quatrieme.jpg" width="500" height="706" alt="Quatrième de couverture" loading="lazy"></button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="d-4" aria-labelledby="h-4">
+  <div class="sheet-top"><span class="k">05 · Lucernaire</span><button class="close" type="button" aria-label="Fermer"><svg><use href="#i-x"/></svg></button></div>
+  <div class="sheet-in">
+    <h3 id="h-4">Lucernaire</h3>
+    <p class="sub">Théâtre · 5 ans de pratique</p>
+    <div class="blocks">
+      <div><h4>Ce que la scène m’a appris</h4><ul><li>Prendre la parole avec aisance</li><li>Maîtriser posture, regard et gestuelle</li><li>Capter l’attention et incarner un message</li></ul></div>
+      <div><h4>Aujourd’hui</h4><p>Je m’en sers pour présenter un projet et échanger avec des interlocuteurs variés.</p></div>
+    </div>
+    <div class="photos">
+      <button type="button"><img src="img/lucernaire.jpg" width="1600" height="1200" alt="Représentation au Lucernaire" loading="lazy"></button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="lb" id="lb" aria-label="Photo en grand">
+  <button class="close" type="button" aria-label="Fermer"><svg><use href="#i-x"/></svg></button>
+  <button class="close lb-nav p" type="button" aria-label="Photo précédente"><svg><use href="#i-l"/></svg></button>
+  <img alt="">
+  <button class="close lb-nav n" type="button" aria-label="Photo suivante"><svg><use href="#i-r"/></svg></button>
+  <p class="cnt"></p>
+</dialog>
+
+<!-- ═══ PARCOURS ═══ -->
+<section class="parcours" id="parcours">
+  <div class="wrap">
+    <p class="k rv">Parcours</p>
+    <h2 class="rv">En <em>bref.</em></h2>
+    <div class="cols rv">
+      <div class="col">
+        <h3>Formation</h3>
+        <ul>
+          <li><span class="y">2026 – 2027</span><b>5e année de pharmacie</b><span>Industrie · Marketing &amp; affaires médicales · Paris Cité</span></li>
+          <li><span class="y">2025 – 2026</span><b>PIR Droit &amp; Économie de la santé</b><span>Mise sur le marché, market access</span></li>
+          <li><span class="y">2023 – 2024</span><b>PIR Chimie</b><span>Université Paris Cité</span></li>
+          <li><span class="y">2019 – 2020</span><b>PACES, admise en 1re fois</b><span>Université Paris Descartes</span></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Expériences &amp; distinctions</h3>
+        <ul>
+          <li><span class="y">Depuis sept. 2026</span><b>Externat en pharmacie clinique</b><span>Hématologie pédiatrique</span></li>
+          <li><span class="y">Depuis 2021</span><b>Officine, job étudiant</b><span>Plus de 5 000 heures</span></li>
+          <li><b>Statut national Étudiant-Entrepreneur</b><span>Programme Pépite France</span></li>
+          <li><b>Cheffe de projet, développement pharmaceutique</b><span>40 étudiants · 5 pôles</span></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Langues &amp; outils</h3>
+        <ul>
+          <li class="row2"><b>Français · Créole</b><span>Langues maternelles</span></li>
+          <li class="row2"><b>Anglais</b><span>B2</span></li>
+          <li class="row2"><b>Espagnol</b><span>Notions</span></li>
+          <li><b>Outils</b><span>Zotero · RStudio · DaVinci Resolve · Procreate Dreams · Open Office</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="k rv">Contact</p>
+    <h2 class="rv" style="margin-top:14px">Travaillons <em>ensemble.</em></h2>
+    <div class="links rv">
+      <a class="btn dark" href="mailto:sarah9noel@gmail.com">M’écrire →</a>
+      <a class="btn" href="https://www.linkedin.com/in/sarah-no%C3%ABl-699748359/" id="linkedin-link" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <p class="mail rv">sarah9noel@gmail.com · Disponible pour un stage à partir d’avril 2027</p>
+    <footer><span>Sarah Noël · Étudiante en pharmacie</span><span>Université Paris Cité · Paris</span></footer>
+  </div>
+</section>
+</main>
+
+<script>
+(function(){
+  /* ——— Navigation ——— */
+  var nav=document.getElementById('nav');
+  function ns(){nav.classList.toggle('solid',window.scrollY>20);}
+  window.addEventListener('scroll',ns,{passive:true});ns();
+
+  /* ——— Expériences en slides ——— */
+  var tabs=[].slice.call(document.querySelectorAll('.tab')),slides=[].slice.call(document.querySelectorAll('.slide'));
+  var count=document.querySelector('.ctrl .count'),cur=0,N=slides.length;
+  var dots=[].slice.call(document.querySelectorAll('.dots i')),names=tabs.map(function(t){return t.querySelector('.t').textContent;});
+  var nextBtn=document.getElementById('next'),nextName=nextBtn.querySelector('.nm'),nextLab=nextBtn.querySelector('.lab');
+  var xp=document.getElementById('experiences');xp.classList.add('fresh');
+  var ui=document.getElementById('experiences');
+  function mid(){var sl=slides[cur],m=sl&&sl.querySelector('.media');if(!m)return;var r=m.getBoundingClientRect(),u=ui.getBoundingClientRect();ui.style.setProperty('--mid',(r.top-u.top+r.height/2)+'px');}
+  document.getElementById('edgeL').addEventListener('click',function(){go(cur-1);});
+  document.getElementById('edgeR').addEventListener('click',function(){go(cur+1);});
+  window.addEventListener('resize',mid);window.addEventListener('load',mid);
+  slides.forEach(function(sl){sl.querySelectorAll('img').forEach(function(im){im.addEventListener('load',function(){if(!sl.hidden)mid();});});});
+  function pad(n){return (n<10?'0':'')+n;}
+  function go(i,focus){
+    i=(i+N)%N;if(i===cur&&!focus)return;
+    tabs.forEach(function(t,k){var on=k===i;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;});
+    slides.forEach(function(s,k){s.hidden=k!==i;s.classList.toggle('enter',k===i);});
+    cur=i;count.innerHTML='<b>'+pad(i+1)+'</b> / '+pad(N);
+    dots.forEach(function(d,k){d.classList.toggle('on',k===i);d.classList.toggle('done',k<i);});
+    nextName.textContent=names[(i+1)%N];nextLab.textContent=(i===N-1)?'Revenir au début':'Projet suivant';
+    xp.classList.remove('fresh');
+    mid();
+    if(focus)tabs[i].focus();
+    if(window.innerWidth<=1060)tabs[i].scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+  }
+  tabs.forEach(function(t,k){t.addEventListener('click',function(){go(k);});
+    t.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();go(cur+1,true);}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();go(cur-1,true);}});});
+  dots[0].classList.add('on');mid();
+  document.getElementById('prev').addEventListener('click',function(){go(cur-1);});
+  document.getElementById('next').addEventListener('click',function(){go(cur+1);});
+  var stage=document.getElementById('stage'),sx=null,sy=null;
+  stage.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
+  stage.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(cur+(dx<0?1:-1));sx=null;});
+
+  /* ——— Voir plus ——— */
+  var lastBtn=null;
+  document.querySelectorAll('[data-more]').forEach(function(b){b.addEventListener('click',function(){lastBtn=b;var d=document.getElementById(b.dataset.more);d.showModal();d.scrollTop=0;});});
+  document.querySelectorAll('.media img[data-open]').forEach(function(im){im.addEventListener('click',function(){var d=document.getElementById('d-'+im.dataset.open);lastBtn=im;d.showModal();d.scrollTop=0;});});
+  document.querySelectorAll('dialog.sheet').forEach(function(d){
+    d.querySelector('.close').addEventListener('click',function(){d.close();});
+    d.addEventListener('click',function(e){if(e.target===d)d.close();});
+    d.addEventListener('close',function(){if(lastBtn&&lastBtn.focus)lastBtn.focus();});
+  });
+
+  /* ——— Visionneuse ——— */
+  var lb=document.getElementById('lb'),lbi=lb.querySelector('img'),lbc=lb.querySelector('.cnt'),list=[],li=0;
+  function show(){var im=list[li];lbi.src=im.currentSrc||im.src;lbi.alt=im.alt;lbc.textContent=list.length>1?(li+1)+' / '+list.length:'';lb.querySelectorAll('.lb-nav').forEach(function(b){b.style.display=list.length>1?'':'none';});}
+  document.querySelectorAll('.sheet .photos').forEach(function(g){
+    var imgs=[].slice.call(g.querySelectorAll('img'));
+    imgs.forEach(function(im,k){im.parentElement.addEventListener('click',function(){list=imgs;li=k;show();lb.showModal();});});
+  });
+  lb.querySelector('.close').addEventListener('click',function(){lb.close();});
+  lb.querySelector('.p').addEventListener('click',function(){li=(li-1+list.length)%list.length;show();});
+  lb.querySelector('.n').addEventListener('click',function(){li=(li+1)%list.length;show();});
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.close();});
+  lb.addEventListener('keydown',function(e){if(list.length<2)return;if(e.key==='ArrowLeft'){li=(li-1+list.length)%list.length;show();}if(e.key==='ArrowRight'){li=(li+1)%list.length;show();}});
+  var lx=null;lb.addEventListener('touchstart',function(e){lx=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){if(lx===null||list.length<2)return;var dx=e.changedTouches[0].clientX-lx;if(Math.abs(dx)>50){li=(li+(dx<0?1:-1)+list.length)%list.length;show();}lx=null;});
+
+  /* ——— Apparitions ——— */
+  var rv=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});rv.forEach(function(el){io.observe(el);});}
+  else rv.forEach(function(el){el.classList.add('in');});
+})();
+</script>
+</body>
+</html>
