@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FBF9F5">
+<title>Sarah Noël · Pharmacie & Marketing des industries de santé</title>
+<meta name="description" content="Sarah Noël, étudiante en cinquième année de pharmacie à l’Université Paris Cité, filière industrie, spécialisation marketing des industries de santé et affaires médicales.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blanc:#FBF9F5;      /* blanc cassé, fond principal */
+  --ivoire:#F6F1E8;
+  --creme:#F0E9DD;
+  --sable:#E3D7C4;
+  --sable-2:#CFC1AA;
+  --gris:#776D63;       /* gris chaud */
+  --texte:#2A2521;
+  --violet:#5A2A85;     /* accent */
+  --violet-doux:rgba(90,42,133,.08);
+  --electrique:#7B3FF2; /* touche ponctuelle */
+  --filet:rgba(42,37,33,.13);
+  --display:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --gutter:clamp(20px,5vw,80px);
+  --max:1280px;
+  --sec:clamp(96px,12vw,176px);
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--blanc);color:var(--texte);font-family:var(--body);font-size:17px;line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--electrique);outline-offset:3px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;text-wrap:balance;letter-spacing:-.01em}
+em{font-style:italic}
+.v{color:var(--violet)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.label{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--gris)}
+.label.v{color:var(--violet)}
+p{text-wrap:pretty}
+
+/* ——— En-tête ——— */
+header.site{position:sticky;top:0;z-index:30;background:rgba(251,249,245,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .4s}
+header.site.scrolled{border-bottom-color:var(--filet)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
+.sig{font-family:var(--display);font-size:26px;text-decoration:none;color:var(--texte);white-space:nowrap;line-height:1}
+.sig i{color:var(--violet)}
+nav.main{display:flex;align-items:center;gap:clamp(16px,2.6vw,36px)}
+nav.main a{font-size:14px;text-decoration:none;color:var(--texte);position:relative;padding:4px 0}
+nav.main a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--violet);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+nav.main a:hover::after,nav.main a.on::after{transform:scaleX(1)}
+nav.main a.cv{border:1px solid var(--texte);padding:8px 18px;border-radius:999px;transition:background .3s,color .3s,border-color .3s}
+nav.main a.cv::after{display:none}
+nav.main a.cv:hover{background:var(--violet);border-color:var(--violet);color:var(--blanc)}
+
+/* ——— Accueil ——— */
+.hero{padding:clamp(48px,7vw,104px) 0 var(--sec)}
+.hero .wrap{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:end}
+.hero-text{grid-column:1 / span 7;padding-bottom:12px}
+.hero h1{font-size:clamp(50px,7vw,108px);line-height:.98;margin:28px 0 30px;color:var(--texte)}
+.hero h1 .v{font-style:italic}
+.hero .sub{font-size:clamp(16px,1.35vw,18px);font-weight:500;letter-spacing:.01em;padding-top:18px;border-top:1px solid var(--texte);max-width:520px}
+.hero .lede{margin-top:34px;font-size:clamp(17px,1.4vw,19px);line-height:1.7;font-weight:300;max-width:52ch}
+.dispo{margin-top:40px;display:inline-flex;align-items:center;gap:12px;font-size:14px;font-weight:500}
+.dispo::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--electrique);box-shadow:0 0 0 5px rgba(123,63,242,.14);flex:none}
+.hero-figure{grid-column:8 / span 5;position:relative;margin:0}
+.hero-figure .frame{position:relative}
+.hero-figure .frame::before{content:"";position:absolute;inset:28px -28px -28px 28px;background:var(--sable);z-index:-1}
+.hero-figure img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
+.hero-figure figcaption{margin-top:44px;font-size:12.5px;color:var(--gris);display:flex;gap:10px;align-items:baseline}
+.hero-figure figcaption::before{content:"";width:22px;height:1px;background:var(--gris);transform:translateY(-4px)}
+.hero .scroll{grid-column:1 / span 12;margin-top:clamp(56px,7vw,96px);display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--filet);padding-top:16px;font-size:12.5px;color:var(--gris);letter-spacing:.04em}
+.hero .scroll span:nth-child(2){text-align:center}
+
+/* ——— Têtes de section ——— */
+section{scroll-margin-top:72px}
+.sec-head{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:baseline;margin-bottom:clamp(56px,7vw,96px)}
+.sec-head .label{grid-column:1 / span 3}
+.sec-head h2{grid-column:4 / span 9;font-size:clamp(40px,5.2vw,76px);line-height:1.02}
+.sec-head h2 em{color:var(--violet)}
+.sec-head .intro{grid-column:4 / span 6;margin-top:24px;font-size:17px;font-weight:300;color:var(--gris);max-width:56ch}
+
+/* ——— À propos ——— */
+#a-propos{padding:var(--sec) 0;background:var(--ivoire)}
+.about{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:start}
+.portrait{grid-column:1 / span 4;margin:0;position:sticky;top:110px}
+.portrait .ph{position:relative;aspect-ratio:4/5;background:var(--sable);overflow:hidden;display:flex;align-items:flex-end;padding:22px}
+.portrait .ph::before{content:"S·N";position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-style:italic;font-size:clamp(64px,7vw,104px);color:rgba(42,37,33,.12)}
+.portrait .ph span{position:relative;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
+.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.portrait figcaption{margin-top:14px;font-size:12.5px;color:var(--gris)}
+.about-text{grid-column:6 / span 7}
+.about-text p{font-size:clamp(17px,1.35vw,19px);line-height:1.75;font-weight:300}
+.about-text p + p{margin-top:1.2em}
+.about-text p.first{font-family:var(--display);font-size:clamp(26px,2.5vw,36px);line-height:1.25;font-weight:400;margin-bottom:1.3em}
+.about-text p.first em{color:var(--violet)}
+.facts{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--texte)}
+.facts div{padding:18px 18px 0 0}
+.facts b{display:block;font-weight:500;font-size:15px;line-height:1.4}
+.facts span{display:block;font-size:13.5px;color:var(--gris);margin-top:4px;line-height:1.45}
+
+.apport{margin-top:var(--sec)}
+.apport-head{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;margin-bottom:40px;align-items:baseline}
+.apport-head .label{grid-column:1 / span 3}
+.apport-head h3{grid-column:4 / span 9;font-size:clamp(30px,3.4vw,48px);line-height:1.08}
+.apport-head h3 em{color:var(--violet)}
+.apport-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 24px;margin-left:calc((100% + 24px) * 3 / 12)}
+.apport-grid div{border-top:1px solid var(--filet);padding:22px 0 34px}
+.apport-grid h4{font-size:24px;line-height:1.15;margin-bottom:8px}
+.apport-grid p{font-size:15px;color:var(--gris);line-height:1.6}
+
+/* ——— Expériences : sommaire ——— */
+#experiences{padding:var(--sec) 0 0}
+.index{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--texte)}
+.index a{display:block;padding:18px 18px 22px 0;text-decoration:none;height:100%}
+.index .n{font-family:var(--display);font-style:italic;font-size:18px;color:var(--violet)}
+.index .t{display:block;font-family:var(--display);font-size:24px;line-height:1.1;margin-top:6px;transition:color .3s}
+.index .r{display:block;font-size:13px;color:var(--gris);margin-top:6px;line-height:1.4}
+.index a:hover .t{color:var(--violet)}
+
+/* ——— Projets : éléments communs ——— */
+.projet{padding:var(--sec) 0;border-top:1px solid var(--filet)}
+.projet:first-of-type{border-top:0}
+.num{font-family:var(--display);font-style:italic;font-size:22px;color:var(--violet);display:flex;align-items:center;gap:14px}
+.num::after{content:"";height:1px;width:48px;background:var(--violet);opacity:.5}
+.role{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--gris);margin-top:22px}
+.projet h3{font-size:clamp(52px,7vw,104px);line-height:.95;margin:14px 0 22px}
+.h3-sub{font-family:var(--display);font-size:clamp(28px,3vw,42px);line-height:1.1;margin:-10px 0 22px;color:var(--gris)}
+.hook{font-family:var(--display);font-style:italic;font-size:clamp(22px,2.1vw,30px);line-height:1.25;color:var(--violet);max-width:30ch}
+.pitch{margin-top:22px;font-size:17px;font-weight:300;line-height:1.7;max-width:46ch}
+.block-label{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--violet);margin-bottom:16px;display:block}
+.prose p{font-size:16.5px;line-height:1.75;max-width:62ch}
+.prose p + p{margin-top:1em}
+.row{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px}
+.mt-l{margin-top:clamp(64px,8vw,112px)}
+.mt-m{margin-top:clamp(40px,5vw,72px)}
+.list{list-style:none}
+.list li{padding:12px 0 12px 26px;border-top:1px solid var(--filet);position:relative;font-size:16px;line-height:1.5}
+.list li:last-child{border-bottom:1px solid var(--filet)}
+.list li::before{content:"";position:absolute;left:0;top:23px;width:12px;height:1px;background:var(--violet)}
+.encadre{background:var(--creme);padding:clamp(32px,4.5vw,64px)}
+.encadre.ivoire{background:var(--ivoire)}
+.encadre h4{font-size:clamp(30px,3vw,42px);line-height:1.08;margin-bottom:28px}
+.encadre h4 em{color:var(--violet)}
+.retenu{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:baseline}
+.retenu .block-label{grid-column:1 / span 3;margin:0}
+.retenu p{grid-column:4 / span 8;font-family:var(--display);font-size:clamp(24px,2.4vw,34px);line-height:1.3}
+.retenu p em{color:var(--violet)}
+.comp{margin-top:28px;font-size:13.5px;color:var(--gris);line-height:1.8}
+.retenu .comp{grid-column:4 / span 8;font-family:var(--body);font-size:13.5px}
+.comp b{font-weight:500;color:var(--texte);margin-right:8px;letter-spacing:.14em;text-transform:uppercase;font-size:11px}
+
+/* figures */
+.fig{margin:0}
+.fig img{width:100%;height:100%;object-fit:cover}
+.fig figcaption{margin-top:12px;font-size:12.5px;color:var(--gris);line-height:1.45}
+.zoom{all:unset;display:block;width:100%;height:100%;cursor:zoom-in;overflow:hidden;position:relative}
+.zoom img{transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.zoom:hover img{transform:scale(1.025)}
+.zoom:focus-visible{outline:2px solid var(--electrique);outline-offset:3px}
+
+/* ——— Carrousel ——— */
+.carousel{position:relative}
+.car-track{display:flex;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;position:relative;gap:16px}
+.car-track::-webkit-scrollbar{display:none}
+.car-track:focus-visible{outline:2px solid var(--electrique);outline-offset:4px}
+.car-slide{flex:0 0 100%;scroll-snap-align:start;margin:0;min-width:0}
+.car-slide .zoom{aspect-ratio:var(--ratio,3/2);background:var(--creme);height:auto}
+.car-slide img{width:100%;height:100%;object-fit:contain}
+.car-slide img.cover{object-fit:cover}
+.car-slide figcaption{margin-top:14px;font-size:13px;color:var(--gris);line-height:1.45;min-height:1.45em}
+.car-ui.off{display:none}
+.car-ui{display:flex;align-items:center;gap:20px;margin-top:18px}
+.car-count{font-family:var(--display);font-style:italic;font-size:18px;font-variant-numeric:tabular-nums;min-width:62px}
+.car-count b{font-weight:400;color:var(--violet)}
+.car-bar{flex:1;height:1px;background:var(--filet);position:relative;overflow:hidden}
+.car-bar i{position:absolute;left:0;top:0;bottom:0;background:var(--violet);width:0;transition:width .5s cubic-bezier(.2,.7,.2,1),left .5s cubic-bezier(.2,.7,.2,1)}
+.car-btn{width:46px;height:46px;border-radius:50%;border:1px solid var(--filet);background:transparent;color:var(--texte);display:grid;place-items:center;cursor:pointer;transition:border-color .3s,background .3s,color .3s,opacity .3s;flex:none}
+.car-btn:hover:not(:disabled){border-color:var(--violet);color:var(--violet)}
+.car-btn:disabled{opacity:.3;cursor:default}
+.car-btn svg{width:18px;height:18px}
+/* variante cartes (plusieurs visuels visibles) */
+.carousel.cards .car-slide{flex:0 0 calc((100% - 48px) / 4)}
+.carousel.cards .car-slide .zoom{--ratio:5/7;background:var(--blanc);box-shadow:0 1px 0 var(--filet),0 18px 40px -24px rgba(42,37,33,.25)}
+.carousel.cards .car-slide img{object-fit:cover;object-position:top}
+
+/* ——— 01 Onzditoo ——— */
+.onz-top{align-items:end}
+.onz-top .t{grid-column:1 / span 5}
+.onz-top .fig{grid-column:7 / span 6}
+.onz-top .fig .zoom{aspect-ratio:4/3}
+.onz-ctx .block-label{grid-column:1 / span 3}
+.onz-ctx .prose{grid-column:4 / span 7}
+.onz-role .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px clamp(32px,4vw,64px)}
+.onz-role h5{font-family:var(--display);font-style:italic;font-size:22px;font-weight:400;color:var(--violet);margin-bottom:10px}
+.bilan .block-label{grid-column:1 / span 3}
+.onz-img .block-label{grid-column:1 / span 2}
+.onz-img .carousel{grid-column:3 / span 10}
+.bilan dl{grid-column:4 / span 9;border-top:1px solid var(--texte)}
+.bilan dl div{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--filet)}
+.bilan dt{font-family:var(--display);font-size:24px;line-height:1.2}
+.bilan dd{font-size:16px;line-height:1.65}
+.bilan dd strong{font-weight:600;color:var(--violet)}
+.distinction{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;border:1px solid var(--violet);background:var(--blanc);position:relative}
+.distinction::before{content:"";position:absolute;left:-1px;top:-1px;bottom:-1px;width:5px;background:var(--violet)}
+.distinction .txt{grid-column:1 / span 6;padding:clamp(32px,4.5vw,64px)}
+.distinction .label{color:var(--violet);display:flex;align-items:center;gap:10px}
+.distinction .label::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--electrique)}
+.distinction h4{font-size:clamp(34px,3.6vw,54px);line-height:1.04;margin:20px 0 20px}
+.distinction h4 em{color:var(--violet)}
+.distinction p{font-size:16px;line-height:1.65;max-width:44ch}
+.distinction p.label{font-size:11.5px;max-width:none}
+.distinction .pics{grid-column:7 / span 6;display:grid;grid-template-columns:1.5fr 1fr;gap:12px;padding:12px 12px 12px 0}
+.distinction .pics .zoom{height:100%;min-height:260px}
+
+/* ——— 02 Stetoo ——— */
+.ste-top .t{grid-column:1 / span 8}
+.fiche{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--texte);border-bottom:1px solid var(--filet)}
+.fiche > div{padding:20px 24px 22px 0}
+.fiche > div + div{padding-left:24px;border-left:1px solid var(--filet)}
+.fiche .label{display:block;margin-bottom:8px}
+.fiche p{font-size:15px;line-height:1.5}
+.formats{display:flex;flex-wrap:wrap;gap:8px}
+.formats span{white-space:nowrap;font-size:14px;padding:6px 14px;border:1px solid var(--violet);color:var(--violet);border-radius:999px;display:inline-flex;align-items:center;gap:8px}
+.formats svg{width:14px;height:14px}
+.ste-body .ctx{grid-column:1 / span 5}
+.ste-body .rl{grid-column:7 / span 6}
+
+/* ——— 03 Circle U. ——— */
+.cir-top .t{grid-column:5 / span 8}
+.cir-top .aside{grid-column:1 / span 3;align-self:end;border-top:1px solid var(--texte);padding-top:16px}
+.cir-top .aside p{font-size:14px;color:var(--gris);line-height:1.55}
+.cir-top .aside strong{display:block;font-family:var(--display);font-weight:400;font-size:44px;line-height:1;color:var(--violet);margin-bottom:6px}
+.idee .intro{font-size:17px;line-height:1.7;max-width:60ch;font-weight:300}
+.temps{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.temps div{background:var(--blanc);padding:28px 28px 32px}
+.temps .k{font-family:var(--display);font-style:italic;font-size:18px;color:var(--violet)}
+.temps h5{font-family:var(--display);font-weight:400;font-size:28px;line-height:1.1;margin:6px 0 12px}
+.temps p{font-size:15.5px;line-height:1.65}
+.idee .chute{margin-top:36px;font-family:var(--display);font-style:italic;font-size:clamp(22px,2vw,28px);color:var(--violet)}
+.cir-role{grid-column:1 / span 7}
+.cir-role .list{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
+.cir-role .list li:nth-last-child(2){border-bottom:1px solid var(--filet)}
+.cir-auj{grid-column:9 / span 4;align-self:start;border-left:1px solid var(--violet);padding:4px 0 4px 28px}
+.cir-auj p{font-size:16px;line-height:1.7}
+.grille{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.grille .fig .zoom{aspect-ratio:3/4}
+.grille .fig.w2{grid-column:span 2}
+.grille .fig.w2 .zoom{aspect-ratio:auto;height:auto;min-height:0}
+.grille .fig.w2 .zoom img{position:absolute;inset:0}
+.grille .fig.w2{display:flex;flex-direction:column}
+.grille .fig.w2 .zoom{flex:1}
+
+/* ——— 04 Baudelaire ——— */
+.bau .row{align-items:start}
+.bau .car-col{grid-column:1 / span 6}
+.bau .txt-col{grid-column:8 / span 5}
+.bau .carousel .car-slide .zoom{--ratio:5/7;background:var(--creme)}
+.bau .car-col{position:sticky;top:104px}
+.biblio{margin-top:40px;padding:24px 0 24px 26px;border-left:1px solid var(--violet)}
+.biblio .label{display:block;margin-bottom:8px;color:var(--violet)}
+.biblio cite{font-family:var(--display);font-style:italic;font-size:26px;line-height:1.2;display:block}
+.biblio p{font-size:14px;color:var(--gris);margin-top:6px}
+
+/* ——— 05 Lucernaire ——— */
+.luc .row{align-items:center}
+.luc .fig{grid-column:1 / span 7}
+.luc .fig .zoom{aspect-ratio:4/3}
+.luc .txt-col{grid-column:9 / span 4}
+.luc h3{font-size:clamp(48px,5.6vw,84px)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;list-style:none}
+.tags li{font-size:13.5px;padding:6px 14px;border:1px solid var(--filet);border-radius:999px;background:var(--blanc)}
+
+/* ——— Parcours ——— */
+#cv{padding:var(--sec) 0;background:var(--ivoire)}
+.cv-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;row-gap:48px}
+.cv-col{grid-column:span 4}
+.cv-col h4{font-family:var(--body);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet);font-weight:600;margin-bottom:10px}
+.cv-col h4:not(:first-child){margin-top:48px}
+.cv-item{border-top:1px solid var(--filet);padding:16px 0}
+.cv-item .y{font-size:12.5px;color:var(--gris);font-variant-numeric:tabular-nums}
+.cv-item b{display:block;font-weight:500;font-size:15.5px;line-height:1.4;margin:3px 0}
+.cv-item span{font-size:14px;color:var(--gris);line-height:1.5;display:block}
+.cv-langs{display:grid;grid-template-columns:1fr auto;border-top:1px solid var(--filet)}
+.cv-langs div{padding:12px 0;border-bottom:1px solid var(--filet);font-size:15px}
+.cv-langs div:nth-child(even){color:var(--gris);font-size:13.5px;text-align:right}
+.tools{display:flex;flex-wrap:wrap;gap:8px;padding-top:16px;border-top:1px solid var(--filet)}
+.tools span{font-size:13px;padding:5px 13px;border:1px solid var(--filet);border-radius:999px;background:var(--blanc)}
+
+/* ——— Contact ——— */
+#contact{padding:var(--sec) 0 clamp(64px,8vw,104px)}
+.contact{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:end}
+.contact .big{grid-column:1 / span 7}
+.contact .closing{font-family:var(--display);font-size:clamp(36px,4.6vw,68px);line-height:1.05}
+.contact .closing em{color:var(--violet)}
+.contact .links{grid-column:9 / span 4;list-style:none}
+.contact .links li{border-top:1px solid var(--texte);padding:18px 0}
+.contact .links li:last-child{border-bottom:1px solid var(--texte)}
+.contact .links .label{display:block;margin-bottom:4px}
+.contact .links a{font-size:17px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;word-break:break-word}
+.contact .links a .arr{transition:transform .3s;color:var(--violet)}
+.contact .links a:hover{color:var(--violet)}
+.contact .links a:hover .arr{transform:translateX(4px)}
+footer{border-top:1px solid var(--filet);padding:28px 0 44px;font-size:12.5px;color:var(--gris)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer .sig{font-size:20px}
+
+/* ——— Visionneuse ——— */
+.lb{position:fixed;inset:0;z-index:60;background:rgba(30,26,23,.95);display:none;align-items:center;justify-content:center;padding:64px 16px 96px}
+.lb.open{display:flex}
+.lb img{max-height:100%;max-width:min(1200px,100%);object-fit:contain}
+.lb .cap{position:absolute;left:0;right:0;bottom:28px;text-align:center;color:var(--ivoire);font-size:14px;padding:0 80px}
+.lb .cap .k{font-family:var(--display);font-style:italic;color:var(--sable-2);margin-right:12px}
+.lb button{position:absolute;background:none;border:1px solid rgba(246,241,232,.3);color:var(--ivoire);width:46px;height:46px;border-radius:50%;cursor:pointer;display:grid;place-items:center;transition:background .3s}
+.lb button:hover{background:rgba(246,241,232,.12)}
+.lb button svg{width:18px;height:18px}
+.lb .x{top:16px;right:16px}
+.lb .prev{left:16px;top:50%;transform:translateY(-50%)}
+.lb .next{right:16px;top:50%;transform:translateY(-50%)}
+
+/* ——— Apparitions discrètes ——— */
+@media (prefers-reduced-motion:no-preference){
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  .hero .rise{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+  .hero .d1{animation-delay:.08s}.hero .d2{animation-delay:.18s}.hero .d3{animation-delay:.3s}.hero .d4{animation-delay:.42s}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .hero-figure .frame::before{animation:slide 1.4s cubic-bezier(.2,.7,.2,1) .25s both}
+  @keyframes slide{from{transform:translate(-28px,-28px)}to{transform:none}}
+}
+
+/* ——— Tablette ——— */
+@media (max-width:1024px){
+  .hero-text{grid-column:1 / span 7}
+  .hero-figure{grid-column:8 / span 5}
+  .index{grid-template-columns:repeat(3,1fr)}
+  .index li{border-bottom:1px solid var(--filet)}
+  .apport-grid{margin-left:0;grid-template-columns:repeat(2,1fr)}
+  .apport-head .label,.apport-head h3{grid-column:1 / span 12}
+  .apport-head h3{margin-top:14px}
+  .carousel.cards .car-slide{flex-basis:calc((100% - 32px) / 3)}
+  .bilan .block-label,.onz-ctx .block-label,.onz-img .block-label,.retenu .block-label{grid-column:1 / span 12;margin-bottom:16px}
+  .bilan dl,.onz-ctx .prose,.onz-img .block-label,.onz-img .carousel,.retenu p,.retenu .comp{grid-column:1 / span 12}
+  .distinction .txt{grid-column:1 / span 12}
+  .distinction .pics{grid-column:1 / span 12;padding:0 12px 12px 12px}
+  .cir-role{grid-column:1 / span 12}
+  .cir-auj{grid-column:1 / span 12;margin-top:48px}
+  .cv-col{grid-column:span 6}
+  .bau .car-col{position:static}
+  .contact .big,.contact .links{grid-column:1 / span 12}
+  .contact .links{margin-top:48px}
+}
+/* ——— Mobile ——— */
+@media (max-width:760px){
+  :root{--gutter:22px;--sec:88px}
+  body{font-size:16px}
+  header.site .wrap{height:auto;flex-wrap:wrap;gap:0;padding-top:12px;padding-bottom:2px}
+  .sig{font-size:24px}
+  nav.main{width:100%;justify-content:space-between;gap:2px;margin:0 -6px}
+  nav.main a{font-size:13.5px;min-height:44px;display:inline-flex;align-items:center;padding:0 6px;white-space:nowrap}
+  nav.main a::after{left:6px;right:6px;bottom:9px}
+  nav.main a.cv{min-height:34px;padding:0 14px}
+  section{scroll-margin-top:110px}
+  .hero{padding-top:28px}
+  .hero-text,.hero-figure{grid-column:1 / span 12}
+  .hero h1{font-size:clamp(44px,13vw,60px);margin:20px 0 24px}
+  .hero-figure{margin:44px 28px 0 0}
+  .hero-figure .frame::before{inset:18px -18px -18px 18px}
+  .hero-figure figcaption{margin-top:32px}
+  .hero .scroll{flex-direction:column;gap:4px}
+  .hero .scroll span:nth-child(2){text-align:left}
+  .sec-head .label,.sec-head h2,.sec-head .intro{grid-column:1 / span 12}
+  .sec-head h2{margin-top:14px;font-size:clamp(36px,10vw,46px)}
+  .portrait{grid-column:1 / span 12;position:static;max-width:340px}
+  .about-text{grid-column:1 / span 12;margin-top:48px}
+  .facts{grid-template-columns:1fr}
+  .facts div{padding:14px 0;border-bottom:1px solid var(--filet)}
+  .apport-grid{grid-template-columns:1fr}
+  .apport-grid div{padding-bottom:24px}
+  .index{grid-template-columns:1fr 1fr}
+  .index li:last-child{grid-column:span 2}
+  .index .t{font-size:21px}
+  .projet h3{font-size:clamp(46px,14vw,64px)}
+  .onz-top .t,.onz-top .fig,.ste-top .t,.ste-body .ctx,.ste-body .rl,.cir-top .t,.cir-top .aside,.bau .car-col,.bau .txt-col,.luc .fig,.luc .txt-col{grid-column:1 / span 12}
+  .onz-top .fig,.luc .txt-col,.bau .txt-col{margin-top:40px}
+  .ste-body .rl{margin-top:48px}
+  .cir-top .aside{order:2;margin-top:36px}
+  .onz-role .cols{grid-template-columns:1fr}
+  .bilan dl div{grid-template-columns:1fr;gap:6px}
+  .bilan dt{font-size:22px}
+  .distinction .pics{grid-template-columns:1fr 1fr}
+  .distinction .pics .zoom{min-height:200px}
+  .fiche{grid-template-columns:1fr 1fr}
+  .fiche > div{padding:16px 12px 18px 0}
+  .fiche > div + div{padding-left:0;border-left:0}
+  .fiche > div:nth-child(even){padding-left:16px;border-left:1px solid var(--filet)}
+  .fiche > div:nth-child(n+3){border-top:1px solid var(--filet)}
+  .carousel.cards .car-slide{flex-basis:72%}
+  .car-slide .zoom{--ratio:4/3 !important}
+  .bau .carousel .car-slide .zoom{--ratio:5/7 !important}
+  .carousel.cards .car-slide .zoom{--ratio:5/7 !important}
+  .car-btn{width:44px;height:44px}
+  .temps{grid-template-columns:1fr;gap:12px}
+  .cir-role .list{grid-template-columns:1fr}
+  .cir-role .list li:nth-last-child(2){border-bottom:0}
+  .grille{grid-template-columns:1fr 1fr;gap:8px}
+  .grille .fig figcaption{display:none}
+  .grille .fig.w2 .zoom{aspect-ratio:3/2;flex:none}
+  .encadre{padding:30px 22px 34px;margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter))}
+  .cv-col{grid-column:1 / span 12}
+  .contact .closing{font-size:clamp(32px,9vw,40px)}
+  .contact .links a{min-height:44px}
+  footer .wrap{flex-direction:column;align-items:flex-start;gap:6px}
+  .lb{padding:56px 10px 130px}
+  .lb .cap{padding:0 16px;bottom:20px;font-size:13px}
+  .lb .prev,.lb .next{top:auto;bottom:64px;transform:none}
+  .lb .prev{left:calc(50% - 58px)}.lb .next{right:calc(50% - 58px)}
+}
+@media (max-width:360px){
+  nav.main a{font-size:12.5px;padding:0 4px}
+  .hero h1{font-size:40px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}html,.car-track{scroll-behavior:auto}}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-prev" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+</svg>
+
+<header class="site">
+  <div class="wrap">
+    <a class="sig" href="#accueil">Sarah <i>Noël</i></a>
+    <nav class="main" aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a>
+      <a href="#a-propos">À propos</a>
+      <a href="#experiences">Expériences</a>
+      <a href="#contact">Contact</a>
+      <a class="cv" href="#cv">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ═══════════ ACCUEIL ═══════════ -->
+<section id="accueil" class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <p class="label rise">Portfolio · Sarah Noël</p>
+      <h1 class="rise d1">Pharmacie <span class="v">&amp; Marketing</span> des industries de santé</h1>
+      <p class="sub rise d2">Étudiante en cinquième année de pharmacie · Université Paris Cité</p>
+      <p class="lede rise d3">Étudiante en pharmacie, je m’intéresse à la façon dont les idées prennent forme, dont les messages se construisent et dont les projets trouvent leur public. Au fil de mes expériences, je me suis tournée vers le marketing des industries de santé, à la croisée des enjeux scientifiques, humains et stratégiques.</p>
+      <p class="dispo rise d4">À la recherche d’un stage de 4 à 6 mois à partir d’avril 2027.</p>
+    </div>
+    <figure class="hero-figure rise d2">
+      <div class="frame"><img src="img/sarah-discours.jpg" alt="Sarah Noël lisant un texte au micro, sur scène" fetchpriority="high"></div>
+      <figcaption>Prise de parole sur scène</figcaption>
+    </figure>
+    <p class="scroll"><span>Filière industrie</span><span>Spécialisation marketing des industries de santé &amp; affaires médicales</span><span>Paris</span></p>
+  </div>
+</section>
+
+<!-- ═══════════ À PROPOS ═══════════ -->
+<section id="a-propos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="label v">À propos</p>
+      <h2>Une formation scientifique, <em>un intérêt</em> pour la façon dont un message est reçu.</h2>
+    </div>
+    <div class="about">
+      <!-- PORTRAIT&nbsp;: déposer simplement le fichier img/portrait.jpg (format vertical, idéalement 1200 × 1500 px).
+           Tant que le fichier n’existe pas, l’emplacement temporaire s’affiche. -->
+      <figure class="portrait reveal">
+        <div class="ph">
+          <span>Portrait à venir</span>
+          <img src="img/portrait.jpg" alt="Portrait de Sarah Noël" loading="lazy" onerror="this.remove()">
+        </div>
+      </figure>
+      <div class="about-text reveal">
+        <p class="first">Étudiante en cinquième année de pharmacie à l’Université Paris Cité, en filière industrie, je souhaite orienter mon parcours vers <em>le marketing des industries de santé</em> et les affaires médicales.</p>
+        <p>En parallèle de ma formation scientifique, j’ai eu l’occasion de développer des projets dans des univers assez différents&nbsp;: un média consacré à la santé des jeunes, la création de contenus de vulgarisation au sein d’une agence de communication santé et l’organisation d’événements universitaires à l’échelle européenne.</p>
+        <p>Ces expériences m’ont amenée à m’intéresser à la manière dont une information se construit, se transmet et trouve son public. Qu’il s’agisse de rendre un sujet scientifique compréhensible pour des patients, de créer des contenus destinés aux professionnels de santé ou de mobiliser des personnes autour d’un projet, j’aime travailler sur le fond d’un message autant que sur la manière de le faire passer.</p>
+        <p>J’aime transformer une idée en projet concret, convaincre différents interlocuteurs de s’y associer et réfléchir à la façon dont un message sera compris et reçu.</p>
+        <div class="facts">
+          <div><b>5e année de pharmacie</b><span>Université Paris Cité · filière industrie</span></div>
+          <div><b>Spécialisation</b><span>Marketing des industries de santé &amp; affaires médicales</span></div>
+          <div><b>Disponibilité</b><span>Stage de 4 à 6 mois, à partir d’avril 2027</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="apport">
+      <div class="apport-head reveal">
+        <p class="label v">Ce que je peux apporter</p>
+        <h3>Des compétences construites <em>sur le terrain</em>, en complément de ma formation scientifique.</h3>
+      </div>
+      <div class="apport-grid">
+        <div class="reveal"><h4>Gestion de projet</h4><p>Mener un projet de l’idée à sa diffusion&nbsp;: concept, financement, production (Onzditoo)&nbsp;; de la conception au jour J (Circle U.).</p></div>
+        <div class="reveal"><h4>Réflexion marketing</h4><p>Définir un positionnement, penser une ligne éditoriale, adapter un message à un format et à un public.</p></div>
+        <div class="reveal"><h4>Création de contenus</h4><p>Podcasts, reportages, carrousels et contenus audio, de la recherche d’information au montage.</p></div>
+        <div class="reveal"><h4>Coordination &amp; organisation</h4><p>Intervenants, prestataires, budget et logistique d’un événement&nbsp;; coordination de 40 étudiants répartis en 5 pôles sur un projet de développement pharmaceutique.</p></div>
+        <div class="reveal"><h4>Relationnel &amp; capacité à fédérer</h4><p>Présenter un projet, convaincre des partenaires, mobiliser des personnes autour d’un objectif commun.</p></div>
+        <div class="reveal"><h4>Compréhension des publics</h4><p>Patients, professionnels de santé, grand public, communauté universitaire&nbsp;: partir des besoins de chacun pour construire le bon message.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ EXPÉRIENCES ═══════════ -->
+<section id="experiences">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="label v">Expériences</p>
+      <h2>Projets <em>&amp;</em> expériences</h2>
+      <p class="intro">Cinq expériences menées en parallèle de mes études, qui m’ont appris à passer d’une idée à sa réalisation.</p>
+    </div>
+
+    <ol class="index reveal" aria-label="Sommaire des expériences">
+      <li><a href="#onzditoo"><span class="n">01</span><span class="t">Onzditoo</span><span class="r">Co-fondatrice · média santé mentale</span></a></li>
+      <li><a href="#stetoo"><span class="n">02</span><span class="t">Stetoo</span><span class="r">Freelance contenu santé</span></a></li>
+      <li><a href="#circle-u"><span class="n">03</span><span class="t">Circle U.</span><span class="r">Ambassadrice événementielle</span></a></li>
+      <li><a href="#baudelaire"><span class="n">04</span><span class="t">Programme Baudelaire</span><span class="r">Création artistique &amp; littéraire</span></a></li>
+      <li><a href="#lucernaire"><span class="n">05</span><span class="t">Lucernaire</span><span class="r">Théâtre</span></a></li>
+    </ol>
+  </div>
+
+  <!-- ───── 01 ONZDITOO ───── -->
+  <article id="onzditoo" class="projet">
+    <div class="wrap">
+      <div class="row onz-top">
+        <div class="t reveal">
+          <p class="num">01</p>
+          <p class="role">Co-fondatrice &amp; rédactrice en chef · Média santé mentale</p>
+          <h3>Onzditoo</h3>
+          <p class="hook">Donner la parole aux jeunes et démocratiser la santé mentale.</p>
+          <p class="pitch">Un média consacré à la santé mentale des jeunes, que j’ai cofondé&nbsp;: podcasts, contenus pour les réseaux sociaux et reportages.</p>
+        </div>
+        <figure class="fig reveal" data-gallery="Onzditoo">
+          <button class="zoom" type="button"><img src="img/onzditoo-07.jpg" alt="Enregistrement d’un podcast Onzditoo à quatre voix sur un canapé blanc"></button>
+          <figcaption>Enregistrement d’un podcast à quatre voix</figcaption>
+        </figure>
+      </div>
+
+      <div class="row onz-ctx mt-l reveal">
+        <span class="block-label">Le contexte</span>
+        <div class="prose">
+          <p>Onzditoo est né d’une ambition&nbsp;: libérer la parole des jeunes sur la santé mentale et rendre ces sujets plus accessibles, dans le contexte de fragilité psychologique qui a marqué la période post-Covid.</p>
+          <p>L’idée était de créer un espace d’échange capable de s’adresser à des publics différents&nbsp;: aux personnes déjà sensibilisées comme à celles qui connaissent moins ces enjeux ou n’osent pas aborder le sujet. Le média croise les regards de professionnels, d’associations et de personnes concernées pour déconstruire certaines idées reçues.</p>
+        </div>
+      </div>
+
+      <div class="encadre onz-role mt-l reveal">
+        <span class="block-label">Mon rôle</span>
+        <h4>Construire le projet, <em>puis le produire.</em></h4>
+        <div class="cols">
+          <div>
+            <h5>Construire</h5>
+            <ul class="list">
+              <li>Définition du concept et du positionnement du média</li>
+              <li>Pilotage de la recherche de financements</li>
+              <li>Recherche de partenaires et d’intervenants</li>
+              <li>Présentation du projet auprès de différents interlocuteurs</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Produire</h5>
+            <ul class="list">
+              <li>Échanges avec des psychologues, des associations et des personnes concernées</li>
+              <li>Tournage, prise de vue et montage</li>
+              <li>Création et diffusion des contenus</li>
+              <li>Mobilisation des personnes souhaitant contribuer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row bilan mt-l reveal">
+        <span class="block-label">Réalisations</span>
+        <dl>
+          <div><dt>Financement</dt><dd>Près de <strong>10 000 € de subventions</strong> obtenues auprès de la CVEC, investis dans du matériel audiovisuel, des équipements de tournage et un véritable espace de production.</dd></div>
+          <div><dt>Contenus</dt><dd>Podcasts avec des professionnels, contenus pour les réseaux sociaux et un reportage au sein d’une structure accompagnant des personnes en situation de handicap.</dd></div>
+          <div><dt>Collaborations</dt><dd>Travail avec des psychologues, des associations et des personnes concernées.</dd></div>
+        </dl>
+      </div>
+
+      <aside class="distinction mt-l reveal" aria-label="Distinction">
+        <div class="txt">
+          <p class="label">Distinction · 2025</p>
+          <h4>Prix individuel de <em>l’engagement étudiant</em></h4>
+          <p>Décerné par l’Université Paris Cité, dans le cadre du concours porté avec l’ACEF et Heyme. Il distingue la création du média Onzditoo.</p>
+        </div>
+        <div class="pics" data-gallery="Onzditoo · Distinction">
+          <figure class="fig"><button class="zoom" type="button"><img src="img/onzditoo-09.jpg" alt="Cérémonie de remise des prix de l’engagement étudiant sur scène" loading="lazy" style="object-position:50% 40%"></button><figcaption hidden>Cérémonie de remise des prix</figcaption></figure>
+          <figure class="fig"><button class="zoom" type="button"><img src="img/onzditoo-12.jpg" alt="Trophée en verre du Prix de l’engagement étudiant" loading="lazy"></button><figcaption hidden>Le trophée du Prix de l’engagement étudiant 2025</figcaption></figure>
+        </div>
+      </aside>
+
+      <div class="row onz-img mt-l reveal">
+        <span class="block-label">En images</span>
+        <div class="carousel" data-carousel data-gallery="Onzditoo" style="--ratio:16/10">
+          <div class="car-track" tabindex="0" aria-label="Galerie Onzditoo, faire défiler">
+            <figure class="car-slide"><button class="zoom" type="button"><img src="img/onzditoo-10.jpg" alt="Le studio Onzditoo, boîte à lumière et caméras" loading="lazy"></button><figcaption>Le studio et son éclairage</figcaption></figure>
+            <figure class="car-slide"><button class="zoom" type="button"><img src="img/onzditoo-01.jpg" alt="Deux intervenants au micro pendant un épisode" loading="lazy"></button><figcaption>Au micro, pendant un épisode</figcaption></figure>
+            <figure class="car-slide"><button class="zoom" type="button"><img src="img/onzditoo-03.jpg" alt="Plateau de tournage du podcast, boîte à lumière et micros" loading="lazy"></button><figcaption>Le plateau de tournage</figcaption></figure>
+            <figure class="car-slide"><button class="zoom" type="button"><img src="img/onzditoo-11.jpg" alt="Installation de tournage pour une interview, micro sur pied et éclairage" loading="lazy"></button><figcaption>Installation de tournage pour une interview</figcaption></figure>
+            <figure class="car-slide"><button class="zoom" type="button"><img src="img/onzditoo-08.jpg" alt="Écran de contrôle d’une caméra pendant un tournage" loading="lazy"></button><figcaption>Derrière la caméra, en reportage</figcaption></figure>
+            <figure class="car-slide"><button class="zoom" type="button"><img src="img/onzditoo-04.jpg" alt="Miniature YouTube de l’épisode «&nbsp;Guérir de l’anxiété&nbsp;?&nbsp;»" loading="lazy"></button><figcaption>Épisode «&nbsp;On apprend à vaincre notre anxiété&nbsp;», publié sur YouTube</figcaption></figure>
+          </div>
+          <div class="car-ui">
+            <span class="car-count" aria-live="polite"></span>
+            <span class="car-bar"><i></i></span>
+            <button class="car-btn prev" type="button" aria-label="Image précédente"><svg><use href="#i-prev"/></svg></button>
+            <button class="car-btn next" type="button" aria-label="Image suivante"><svg><use href="#i-next"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="retenu mt-l reveal">
+        <span class="block-label">Ce que j’en retiens</span>
+        <p>Transformer une idée en initiative concrète, défendre une vision, <em>convaincre différents interlocuteurs</em> et fédérer autour d’un objectif commun.</p>
+        <p class="comp"><b>Compétences</b>Gestion de projet · Recherche de financements · Partenariats · Ligne éditoriale · Tournage &amp; montage · Communication santé</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ───── 02 STETOO ───── -->
+  <article id="stetoo" class="projet">
+    <div class="wrap">
+      <div class="row ste-top reveal">
+        <div class="t">
+          <p class="num">02</p>
+          <p class="role">Freelance contenu santé</p>
+          <h3>Stetoo</h3>
+          <p class="h3-sub">pour Sympathique Média</p>
+          <p class="hook">Rendre l’information santé accessible et engageante.</p>
+        </div>
+      </div>
+
+      <div class="fiche mt-m reveal">
+        <div><span class="label">Structure</span><p>Stetoo, agence de communication et d’innovation en santé</p></div>
+        <div><span class="label">Mission</span><p>Contenus pour sa branche média, Sympathique Média</p></div>
+        <div><span class="label">Période</span><p>Avril 2026 · un mois</p></div>
+        <div><span class="label">Formats</span>
+          <div class="formats">
+            <span><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="3" width="9" height="10" fill="none" stroke="currentColor"/><path d="M12.5 4.5v7M14.5 6v4" stroke="currentColor"/></svg>Carrousel</span>
+            <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 7v2M5 4.5v7M8 2.5v11M11 5v6M14 7v2" stroke="currentColor"/></svg>Contenu audio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row ste-body mt-l">
+        <div class="ctx prose reveal">
+          <span class="block-label">Le contexte</span>
+          <p>J’ai rejoint Stetoo en freelance pendant un mois, dans le cadre du développement de sa branche média. L’enjeu&nbsp;: trouver le bon équilibre entre fiabilité scientifique, clarté du discours et attractivité du contenu, dans le respect d’une ligne éditoriale commune.</p>
+          <p>J’ai également assisté à la rencontre avec Ghada Hatem-Gantzer, gynécologue-obstétricienne et fondatrice de la Maison des femmes de Saint-Denis, interviewée dans le cadre des contenus du média.</p>
+        </div>
+        <div class="rl reveal">
+          <span class="block-label">Mon rôle</span>
+          <ul class="list">
+            <li>Création de contenus de vulgarisation et d’actualité en santé</li>
+            <li>Conception de carrousels et de contenus audio</li>
+            <li>Recherche, sélection et synthèse d’informations</li>
+            <li>Adaptation des messages aux formats et aux publics</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-l reveal">
+        <span class="block-label">En images</span>
+        <div class="carousel cards" data-carousel data-gallery="Stetoo · Sympathique Média">
+          <div class="car-track" tabindex="0" aria-label="Contenus Sympathique Média, faire défiler">
+            <figure class="car-slide"><button class="zoom" type="button"><img src="img/stetoo-01.jpg" alt="Carrousel&nbsp;: Alimentation ultra-transformée et cancer" loading="lazy"></button><figcaption>Carrousel · Alimentation ultra-transformée et cancer</figcaption></figure>
+            <figure class="car-slide"><button class="zoom" type="button"><img src="img/stetoo-02.jpg" alt="Carrousel&nbsp;: La médecine a longtemps oublié la moitié de l’humanité" loading="lazy"></button><figcaption>Carrousel · La médecine a longtemps oublié la moitié de l’humanité</figcaption></figure>
+            <figure class="car-slide"><button class="zoom" type="button"><img src="img/stetoo-04.jpg" alt="Carrousel&nbsp;: Burn-out chez les étudiants" loading="lazy"></button><figcaption>Carrousel · Burn-out chez les étudiants</figcaption></figure>
+            <figure class="car-slide"><button class="zoom" type="button"><img src="img/stetoo-03.jpg" alt="Contenu vidéo de Sympathique Média avec Ghada Hatem-Gantzer sur la Maison des femmes" loading="lazy"></button><figcaption>Contenu du média avec Ghada Hatem-Gantzer</figcaption></figure>
+          </div>
+          <div class="car-ui">
+            <span class="car-count" aria-live="polite"></span>
+            <span class="car-bar"><i></i></span>
+            <button class="car-btn prev" type="button" aria-label="Contenu précédent"><svg><use href="#i-prev"/></svg></button>
+            <button class="car-btn next" type="button" aria-label="Contenu suivant"><svg><use href="#i-next"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="retenu mt-l reveal">
+        <span class="block-label">Ce que j’en retiens</span>
+        <p>Rendre une information accessible <em>sans en dénaturer le fond</em>, et adapter son discours à différents publics.</p>
+        <p class="comp"><b>Compétences</b>Vulgarisation scientifique · Veille santé · Synthèse · Écriture multiformat · Ligne éditoriale</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ───── 03 CIRCLE U. ───── -->
+  <article id="circle-u" class="projet">
+    <div class="wrap">
+      <div class="row cir-top">
+        <div class="aside reveal">
+          <strong>9</strong>
+          <p>universités européennes réunies dans l’alliance Circle U.</p>
+        </div>
+        <div class="t reveal">
+          <p class="num">03</p>
+          <p class="role">Ambassadrice événementielle · Alliance européenne d’universités</p>
+          <h3>Circle U.</h3>
+          <p class="hook">Rendre les enjeux du climat et de la biodiversité accessibles à tous.</p>
+          <p class="pitch">J’ai imaginé et coordonné un événement autour des liens entre climat, biodiversité et santé, pour sortir d’une approche exclusivement académique.</p>
+        </div>
+      </div>
+
+      <div class="encadre idee mt-l reveal">
+        <span class="block-label">L’idée</span>
+        <h4>Faire découvrir les plantes <em>par les explications, mais aussi par les sens.</em></h4>
+        <p class="intro">Proposer une expérience accessible et conviviale, qui permette à chacun de comprendre concrètement l’importance de préserver notre environnement et les ressources qu’il nous offre. Un parcours en deux temps&nbsp;:</p>
+        <div class="temps">
+          <div><span class="k">Premier temps</span><h5>La visite du jardin botanique</h5><p>Animée par des enseignants-chercheurs et des spécialistes, autour des plantes médicinales, comestibles et toxiques, de leurs propriétés et de leurs usages.</p></div>
+          <div><span class="k">Second temps</span><h5>La dégustation</h5><p>Imaginée par un traiteur vegan à partir de plantes présentes dans le jardin&nbsp;: huiles infusées, tartelettes aux herbes, jus et infusions.</p></div>
+        </div>
+      </div>
+
+      <div class="row mt-l">
+        <div class="cir-role reveal">
+          <span class="block-label">Mon rôle · de l’idée au jour J</span>
+          <ul class="list">
+            <li>Conception du concept de l’événement</li>
+            <li>Recherche des intervenants et prestataires</li>
+            <li>Recherche d’un traiteur adapté</li>
+            <li>Gestion du budget</li>
+            <li>Choix du lieu et organisation logistique</li>
+            <li>Coordination des différents interlocuteurs</li>
+          </ul>
+        </div>
+        <div class="cir-auj reveal">
+          <span class="block-label">Aujourd’hui</span>
+          <p>Mon engagement au sein de Circle U. m’amène aussi à participer à des réunions et à des échanges avec les universités partenaires, autour de projets communs et d’événements interculturels, notamment la Journée des langues.</p>
+        </div>
+      </div>
+
+      <div class="mt-l reveal">
+        <span class="block-label">En images</span>
+        <div class="grille" data-gallery="Circle U.">
+          <figure class="fig"><button class="zoom" type="button"><img src="img/circle-09.jpg" alt="Participants autour de la table de dégustation dans le jardin botanique" loading="lazy" style="object-position:50% 40%"></button><figcaption>Dégustation au cœur du jardin</figcaption></figure>
+          <figure class="fig"><button class="zoom" type="button"><img src="img/circle-01.jpg" alt="Visite guidée du jardin botanique" loading="lazy"></button><figcaption>Visite du jardin, animée par des spécialistes</figcaption></figure>
+          <figure class="fig w2"><button class="zoom" type="button"><img src="img/circle-03.jpg" alt="Table de dégustation avec plantes en pot, jus et huiles infusées" loading="lazy"></button><figcaption>Plantes, jus et huiles infusées</figcaption></figure>
+          <figure class="fig"><button class="zoom" type="button"><img src="img/circle-02.jpg" alt="Service des jus et infusions aux participants" loading="lazy" style="object-position:50% 45%"></button><figcaption>Jus et infusions à base de plantes</figcaption></figure>
+          <figure class="fig"><button class="zoom" type="button"><img src="img/circle-08.jpg" alt="Tartelettes aux herbes sur une table en bois" loading="lazy"></button><figcaption>Tartelettes aux herbes, traiteur vegan</figcaption></figure>
+          <figure class="fig"><button class="zoom" type="button"><img src="img/circle-10.jpg" alt="Plateau de radis frais" loading="lazy" style="object-position:50% 70%"></button><figcaption>Radis du jardin</figcaption></figure>
+          <figure class="fig"><button class="zoom" type="button"><img src="img/circle-04.jpg" alt="Fraises et préparations végétales sur la table" loading="lazy" style="object-position:50% 55%"></button><figcaption>Fraises et préparations végétales</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="retenu mt-l reveal">
+        <span class="block-label">Ce que j’en retiens</span>
+        <p>Penser la transmission d’un message dans sa globalité&nbsp;: <em>la pertinence du contenu</em> autant que la manière de le rendre compréhensible et engageant.</p>
+        <p class="comp"><b>Compétences</b>Conception d’événement · Gestion de budget · Logistique · Coordination multi-acteurs · Médiation scientifique · Interculturalité</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ───── 04 BAUDELAIRE ───── -->
+  <article id="baudelaire" class="projet bau">
+    <div class="wrap">
+      <div class="row">
+        <div class="car-col reveal">
+          <div class="carousel" data-carousel data-gallery="Programme Baudelaire">
+            <div class="car-track" tabindex="0" aria-label="Galerie Programme Baudelaire, faire défiler">
+              <figure class="car-slide"><button class="zoom" type="button"><img src="img/baudelaire-02.jpg" alt="Couverture du livre L’Androgyne, Les Baudelaire, Actes Sud" loading="lazy"></button><figcaption>Couverture de l’ouvrage, Actes Sud</figcaption></figure>
+              <figure class="car-slide"><button class="zoom" type="button"><img src="img/baudelaire-01.jpg" alt="Peinture aux formes et couleurs vives réalisée dans le cadre du programme" loading="lazy"></button><figcaption>Travail plastique autour de l’Androgyne</figcaption></figure>
+              <figure class="car-slide"><button class="zoom" type="button"><img src="img/baudelaire-03.jpg" alt="Quatrième de couverture de l’ouvrage" loading="lazy"></button><figcaption>Quatrième de couverture</figcaption></figure>
+            </div>
+            <div class="car-ui">
+              <span class="car-count" aria-live="polite"></span>
+              <span class="car-bar"><i></i></span>
+              <button class="car-btn prev" type="button" aria-label="Image précédente"><svg><use href="#i-prev"/></svg></button>
+              <button class="car-btn next" type="button" aria-label="Image suivante"><svg><use href="#i-next"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div class="txt-col reveal">
+          <p class="num">04</p>
+          <p class="role">Création artistique &amp; littéraire</p>
+          <h3>Programme Baudelaire</h3>
+          <p class="hook">Explorer différentes formes d’expression et donner vie aux idées.</p>
+          <div class="prose mt-m">
+            <span class="block-label">Le contexte</span>
+            <p>Une initiative artistique et pédagogique accueillie par la faculté de pharmacie de Paris, menée sous la direction de l’écrivaine Cécile Ladjali. Notre promotion a travaillé autour d’un fil conducteur&nbsp;: l’Androgyne.</p>
+          </div>
+          <div class="mt-m">
+            <span class="block-label">Ce que j’ai exploré</span>
+            <ul class="list">
+              <li>Ateliers d’écriture</li>
+              <li>Création plastique et peinture</li>
+              <li>Interprétation et lecture à voix haute sur scène</li>
+            </ul>
+          </div>
+          <div class="biblio">
+            <span class="label">Publication · Actes Sud</span>
+            <cite>Les Baudelaire, Promotion IV&nbsp;: L’Androgyne</cite>
+            <p>Ouvrage collectif rassemblant une partie des travaux du programme.</p>
+          </div>
+          <p class="comp"><b>Compétences</b>Expression écrite · Prise de parole · Créativité · Travail collectif</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ───── 05 LUCERNAIRE ───── -->
+  <article id="lucernaire" class="projet luc">
+    <div class="wrap">
+      <div class="row">
+        <figure class="fig reveal" data-gallery="Lucernaire">
+          <button class="zoom" type="button"><img src="img/lucernaire-01.jpg" alt="Représentation théâtrale sur la scène du Lucernaire" loading="lazy"></button>
+          <figcaption>Représentation au Lucernaire</figcaption>
+        </figure>
+        <div class="txt-col reveal">
+          <p class="num">05</p>
+          <p class="role">Théâtre · 5 ans de pratique</p>
+          <h3>Lucernaire</h3>
+          <p class="hook">Développer sa présence et son aisance à l’oral.</p>
+          <div class="prose mt-m">
+            <p>Communiquer ne consiste pas seulement à trouver les bons mots, mais aussi à savoir les incarner, capter l’attention et créer une connexion avec son interlocuteur.</p>
+            <p>Des compétences que je mobilise aujourd’hui pour présenter des projets, prendre la parole et échanger avec des interlocuteurs variés.</p>
+          </div>
+          <ul class="tags" aria-label="Travaillé sur scène">
+            <li>Aisance à l’oral</li><li>Présence scénique</li><li>Gestuelle &amp; posture</li><li>Communication non verbale</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ═══════════ PARCOURS ═══════════ -->
+<section id="cv">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="label v">Parcours · CV</p>
+      <h2>Le parcours <em>en bref</em>.</h2>
+    </div>
+    <div class="cv-grid reveal">
+      <div class="cv-col">
+        <h4>Formation</h4>
+        <div class="cv-item"><span class="y">2026 – 2027</span><b>5e année de pharmacie, Industrie &amp; Recherche</b><span>Spécialité Marketing des industries pharmaceutiques – Affaires médicales · Université Paris Cité</span></div>
+        <div class="cv-item"><span class="y">2025 – 2026</span><b>PIR Droit &amp; Économie de la santé</b><span>Mise sur le marché, droit pharmaceutique, droit de l’IA, market access · Université Paris Cité</span></div>
+        <div class="cv-item"><span class="y">2023 – 2024</span><b>PIR Chimie</b><span>Mécanismes d’action moléculaires, outils analytiques · Université Paris Cité</span></div>
+        <div class="cv-item"><span class="y">2019 – 2020</span><b>PACES, admise en 1re fois</b><span>Université Paris Descartes</span></div>
+        <div class="cv-item"><b>Baccalauréat S, spécialité physique-chimie</b><span>Lycée Montaigne, Paris 6</span></div>
+      </div>
+      <div class="cv-col">
+        <h4>Autres expériences</h4>
+        <div class="cv-item"><span class="y">Depuis sept. 2026</span><b>Externat en pharmacie clinique</b><span>Service d’hématologie pédiatrique · vulgarisation de prescription, entretien thérapeutique, accompagnement du patient, recherche bibliographique</span></div>
+        <div class="cv-item"><span class="y">Depuis 2021</span><b>Officine, job étudiant</b><span>Pharmacie, Paris · plus de 5 000 heures</span></div>
+        <div class="cv-item"><span class="y">2022</span><b>Séjour associatif, Montréal</b><span>Accompagnement de personnes en situation de handicap mental, vulgarisation des traitements psychiatriques, ateliers créatifs</span></div>
+        <h4>Distinctions</h4>
+        <div class="cv-item"><b>Prix de l’engagement étudiant 2025</b><span>Concours porté par l’Université Paris Cité, l’ACEF et Heyme</span></div>
+        <div class="cv-item"><b>Statut national Étudiant-Entrepreneur</b><span>Programme Pépite France</span></div>
+        <div class="cv-item"><b>Cheffe de projet, développement pharmaceutique</b><span>Coordination de 40 étudiants répartis en 5 pôles autour du développement d’un médicament de thérapie génique innovant</span></div>
+      </div>
+      <div class="cv-col">
+        <h4>Langues</h4>
+        <div class="cv-langs">
+          <div>Français</div><div>Langue maternelle</div>
+          <div>Créole</div><div>Langue maternelle</div>
+          <div>Anglais</div><div>Professionnel · B2</div>
+          <div>Espagnol</div><div>Notions</div>
+        </div>
+        <h4>Outils</h4>
+        <div class="tools"><span>Open Office</span><span>Zotero</span><span>RStudio</span><span>Procreate Dreams</span><span>DaVinci Resolve</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="label v">Contact</p>
+      <h2>Sarah Noël</h2>
+    </div>
+    <div class="contact reveal">
+      <div class="big">
+        <p class="closing">Toujours partante pour découvrir de nouveaux projets, rencontrer de nouvelles perspectives et <em>faire émerger des idées.</em></p>
+        <p class="dispo">À la recherche d’un stage de 4 à 6 mois à partir d’avril 2027.</p>
+      </div>
+      <ul class="links">
+        <li><span class="label">E-mail</span><a href="mailto:sarah9noel@gmail.com">sarah9noel@gmail.com <span class="arr" aria-hidden="true">→</span></a></li>
+        <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/" id="linkedin-link" rel="noopener">Voir le profil <span class="arr" aria-hidden="true">→</span></a></li>
+        <li><span class="label">CV</span><a href="#cv">Consulter le parcours <span class="arr" aria-hidden="true">→</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="sig" href="#accueil">Sarah <i>Noël</i></a>
+    <span>Pharmacie &amp; Marketing des industries de santé · Université Paris Cité</span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Visionneuse d’images">
+  <button class="x" type="button" aria-label="Fermer"><svg><use href="#i-x"/></svg></button>
+  <button class="prev" type="button" aria-label="Image précédente"><svg><use href="#i-prev"/></svg></button>
+  <img alt="">
+  <button class="next" type="button" aria-label="Image suivante"><svg><use href="#i-next"/></svg></button>
+  <p class="cap"><span class="k"></span><span class="t"></span></p>
+</div>
+
+<script>
+(function(){
+  /* ——— Visionneuse ——— */
+  var lb=document.getElementById('lb'),lbImg=lb.querySelector('img'),lbK=lb.querySelector('.k'),lbT=lb.querySelector('.t');
+  var items=[],cur=0,last=null;
+  function show(){var f=items[cur],im=f.querySelector('img');lbImg.src=im.currentSrc||im.src;lbImg.alt=im.alt;lbK.textContent=items.length>1?(cur+1)+' / '+items.length:'';var c=f.querySelector('figcaption');lbT.textContent=c?c.textContent:im.alt;}
+  function open(list,i,btn){items=list;cur=i;last=btn;show();lb.classList.add('open');document.body.style.overflow='hidden';var multi=list.length>1;lb.querySelector('.prev').style.display=multi?'':'none';lb.querySelector('.next').style.display=multi?'':'none';lb.querySelector('.x').focus();}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';if(last)last.focus();}
+  function step(d){cur=(cur+d+items.length)%items.length;show();}
+  document.querySelectorAll('[data-gallery]').forEach(function(g){
+    if(g.parentElement.closest('[data-gallery]')&&!g.matches('[data-carousel]'))return;
+    var figs=[].slice.call(g.querySelectorAll('figure')).filter(function(f){return f.querySelector('.zoom');});
+    if(g.tagName==='FIGURE')figs=[g];
+    figs.forEach(function(f,i){f.querySelector('.zoom').addEventListener('click',function(){open(figs,i,this);});});
+  });
+  lb.querySelector('.x').addEventListener('click',close);
+  lb.querySelector('.prev').addEventListener('click',function(){step(-1)});
+  lb.querySelector('.next').addEventListener('click',function(){step(1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  var sx=null;
+  lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50&&items.length>1)step(dx<0?1:-1);sx=null;});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft'&&items.length>1)step(-1);if(e.key==='ArrowRight'&&items.length>1)step(1);});
+
+  /* ——— Carrousels ——— */
+  function pad(n){return (n<10?'0':'')+n;}
+  document.querySelectorAll('[data-carousel]').forEach(function(c){
+    var track=c.querySelector('.car-track'),slides=[].slice.call(track.children),n=slides.length;
+    var prev=c.querySelector('.prev'),next=c.querySelector('.next'),count=c.querySelector('.car-count'),bar=c.querySelector('.car-bar i');
+    var cards=c.classList.contains('cards');
+    /* cadrage : « cover » seulement si le format de l’image est proche du cadre, sinon l’image entière est montrée */
+    if(!cards){
+      slides.forEach(function(s){
+        var img=s.querySelector('img'),box=s.querySelector('.zoom');
+        function fit(){if(!img.naturalWidth)return;var r=img.naturalWidth/img.naturalHeight,br=box.clientWidth/box.clientHeight;img.classList.toggle('cover',Math.abs(Math.log(r/br))<0.12);}
+        if(img.complete)fit();else img.addEventListener('load',fit);
+        window.addEventListener('resize',fit);
+      });
+    }
+    function index(){var best=0,bd=Infinity;slides.forEach(function(s,i){var d=Math.abs(s.offsetLeft-track.scrollLeft);if(d<bd){bd=d;best=i;}});return best;}
+    function visible(){return Math.max(1,Math.round(track.clientWidth/(slides[0].getBoundingClientRect().width||1)));}
+    function update(){
+      var i=index(),v=visible(),atEnd=track.scrollLeft>=track.scrollWidth-track.clientWidth-4;
+      if(atEnd)i=Math.max(i,n-v);
+      var last=Math.min(n,i+v);
+      count.innerHTML=v>1?'<b>'+pad(i+1)+'–'+pad(last)+'</b> / '+pad(n):'<b>'+pad(i+1)+'</b> / '+pad(n);
+      bar.style.left=(i/n*100)+'%';bar.style.width=(v/n*100)+'%';
+      prev.disabled=track.scrollLeft<=4;next.disabled=atEnd;
+      c.querySelector('.car-ui').classList.toggle('off',v>=n);
+    }
+    function go(i){i=Math.max(0,Math.min(n-1,i));track.scrollTo({left:slides[i].offsetLeft,behavior:'smooth'});}
+    prev.addEventListener('click',function(){go(index()-1);});
+    next.addEventListener('click',function(){go(index()+1);});
+    track.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(index()+1);}if(e.key==='ArrowLeft'){e.preventDefault();go(index()-1);}});
+    var t;track.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(update,60);},{passive:true});
+    window.addEventListener('resize',update);
+    update();
+  });
+
+  /* ——— Apparitions ——— */
+  var rev=[].slice.call(document.querySelectorAll('.reveal'));
+  if('IntersectionObserver' in window){
+    var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.05});
+    rev.forEach(function(el){ro.observe(el);});
+  } else rev.forEach(function(el){el.classList.add('in');});
+
+  /* ——— En-tête & navigation active ——— */
+  var head=document.querySelector('header.site');
+  function onScroll(){head.classList.toggle('scrolled',window.scrollY>8);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var links=[].slice.call(document.querySelectorAll('nav.main a:not(.cv)'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id='#'+e.target.id;links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===id);});}});},{rootMargin:'-45% 0px -50% 0px'});
+    links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s)io.observe(s);});
+  }
+})();
+</script>
+</body>
+</html>
